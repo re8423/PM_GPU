@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH -p shared
+#SBATCH -p test
 #SBATCH --mem-per-cpu=40G
 #SBATCH -N 1
 #SBATCH --ntasks-per-node=1
