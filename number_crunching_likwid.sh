@@ -6,5 +6,7 @@
 #SBATCH -c 1
 #SBATCH --time=00:35:00
 
+module load gcc/12.2 likwid/5.2.0
+
 likwid-perfctr -m -g "MEM_DP" -C 0 ./num_crunch_likwid 40000
 likwid-perfctr -m -g "FLOPS_DP" -C 0 ./num_crunch_likwid 40000
