@@ -4,7 +4,7 @@
 #SBATCH -N 1
 #SBATCH --ntasks-per-node=1
 #SBATCH -c 1
-#SBATCH --time=00:35:00
+#SBATCH --time=00:15:00
 
 module load gcc/12.2 likwid/5.2.0
 

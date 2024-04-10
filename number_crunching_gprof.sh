@@ -4,7 +4,7 @@
 #SBATCH -N 1
 #SBATCH --ntasks-per-node=1
 #SBATCH -c 1
-#SBATCH --time=00:35:00
+#SBATCH --time=00:15:00
 
 ./number_crunching 10000
 gprof -zb number_crunching gmon.out
