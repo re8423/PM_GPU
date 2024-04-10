@@ -8,7 +8,7 @@
 
 module load gcc/12.2 likwid/5.2.0
 
-g++ -mfma -O1 -DLIKWID_PERFMON -fno-inline -march=native -o num_crunch_likwid number_crunching_likwid.cpp -llikwid
+g++ -mfma -O1 -DLIKWID_PERFMON -fno-inline -march=native -o num_crunch_likwid_all number_crunching_likwid_all.cpp -llikwid
 
-likwid-perfctr -m -g "MEM_DP" -C 0 ./num_crunch_likwid 40000
-likwid-perfctr -m -g "FLOPS_DP" -C 0 ./num_crunch_likwid 40000
+likwid-perfctr -m -g "MEM_DP" -C 0 ./num_crunch_likwid_all 40000
+likwid-perfctr -m -g "FLOPS_DP" -C 0 ./num_crunch_likwid_all 40000
