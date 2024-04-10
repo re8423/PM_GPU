@@ -116,20 +116,19 @@ int main(int argc, char **argv) {
   double *v = new double[N];
   double *A = new double[N * N];
 
-  LIKWID_MARKER_START("<init_datastructures>");
+  LIKWID_MARKER_START("<all>");
   init_datastructures(u, v, A, N);
-  LIKWID_MARKER_STOP("<init_datastructures>");
 
   double s = function_d(u, v, N);
   double *x = function_b(2, u, v, N);
 
-  LIKWID_MARKER_START("<function_a>");
   double *y = function_a(A, x, N);
-  LIKWID_MARKER_STOP("<function_a>");
-
-  LIKWID_MARKER_CLOSE;
 
   double *z = function_c(s, x, y, N);
+
+  LIKWID_MARKER_STOP("<all>");
+
+  LIKWID_MARKER_CLOSE;
 
   std::ofstream File("partial_results.out");
   print_results_to_file(s, x, y, z, A, N, File);
