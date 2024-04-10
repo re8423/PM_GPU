@@ -1,0 +1,1 @@
+gprof -zb number_crunching gmon.out
