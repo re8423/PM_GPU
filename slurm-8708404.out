@@ -1,0 +1,1780 @@
+INFO: You are running LIKWID in a cpuset with 1 CPUs. Taking given IDs as logical ID in cpuset
+--------------------------------------------------------------------------------
+CPU name:	AMD EPYC 7702 64-Core Processor
+CPU type:	AMD K17 (Zen2) architecture
+CPU clock:	2.00 GHz
+--------------------------------------------------------------------------------
+For correctness checking, partial results have been written to partial_results.out
+--------------------------------------------------------------------------------
+Region <init_datastructures>, Group 1: MEM_DP
++-------------------+-------------+
+|    Region Info    | HWThread 64 |
++-------------------+-------------+
+| RDTSC Runtime [s] |    0.109131 |
+|     call count    |           1 |
++-------------------+-------------+
+
++---------------------------+---------+-------------+
+|           Event           | Counter | HWThread 64 |
++---------------------------+---------+-------------+
+|      ACTUAL_CPU_CLOCK     |  FIXC1  |   364615000 |
+|       MAX_CPU_CLOCK       |  FIXC2  |   218088300 |
+|    RETIRED_INSTRUCTIONS   |   PMC0  |   700120400 |
+|    CPU_CLOCKS_UNHALTED    |   PMC1  |   148143300 |
+| RETIRED_SSE_AVX_FLOPS_ALL |   PMC2  |          12 |
+|           MERGE           |   PMC3  |           0 |
+|       DRAM_CHANNEL_0      |   DFC0  |    12638580 |
+|       DRAM_CHANNEL_1      |   DFC1  |    12638240 |
++---------------------------+---------+-------------+
+
++-----------------------------------+--------------+
+|               Metric              |  HWThread 64 |
++-----------------------------------+--------------+
+|        Runtime (RDTSC) [s]        |       0.1091 |
+|        Runtime unhalted [s]       |       0.1827 |
+|            Clock [MHz]            |    3337.4516 |
+|                CPI                |       0.2116 |
+|            DP [MFLOP/s]           |       0.0001 |
+|    Memory bandwidth [MBytes/s]    |   14823.5929 |
+|    Memory data volume [GBytes]    |       1.6177 |
+| Operational intensity [FLOP/Byte] | 7.417863e-09 |
++-----------------------------------+--------------+
+
+Region <function_d>, Group 1: MEM_DP
++-------------------+-------------+
+|    Region Info    | HWThread 64 |
++-------------------+-------------+
+| RDTSC Runtime [s] |    0.000011 |
+|     call count    |           1 |
++-------------------+-------------+
+
++---------------------------+---------+-------------+
+|           Event           | Counter | HWThread 64 |
++---------------------------+---------+-------------+
+|      ACTUAL_CPU_CLOCK     |  FIXC1  |      274454 |
+|       MAX_CPU_CLOCK       |  FIXC2  |      163920 |
+|    RETIRED_INSTRUCTIONS   |   PMC0  |       69126 |
+|    CPU_CLOCKS_UNHALTED    |   PMC1  |       64318 |
+| RETIRED_SSE_AVX_FLOPS_ALL |   PMC2  |       20012 |
+|           MERGE           |   PMC3  |           0 |
+|       DRAM_CHANNEL_0      |   DFC0  |        2800 |
+|       DRAM_CHANNEL_1      |   DFC1  |        2836 |
++---------------------------+---------+-------------+
+
++-----------------------------------+--------------+
+|               Metric              |  HWThread 64 |
++-----------------------------------+--------------+
+|        Runtime (RDTSC) [s]        | 1.111090e-05 |
+|        Runtime unhalted [s]       |       0.0001 |
+|            Clock [MHz]            |    3342.3385 |
+|                CPI                |       0.9304 |
+|            DP [MFLOP/s]           |    1801.1142 |
+|    Memory bandwidth [MBytes/s]    |   32463.9768 |
+|    Memory data volume [GBytes]    |       0.0004 |
+| Operational intensity [FLOP/Byte] |       0.0555 |
++-----------------------------------+--------------+
+
+Region <function_b>, Group 1: MEM_DP
++-------------------+-------------+
+|    Region Info    | HWThread 64 |
++-------------------+-------------+
+| RDTSC Runtime [s] |    0.000026 |
+|     call count    |           1 |
++-------------------+-------------+
+
++---------------------------+---------+-------------+
+|           Event           | Counter | HWThread 64 |
++---------------------------+---------+-------------+
+|      ACTUAL_CPU_CLOCK     |  FIXC1  |      324213 |
+|       MAX_CPU_CLOCK       |  FIXC2  |      193740 |
+|    RETIRED_INSTRUCTIONS   |   PMC0  |       79148 |
+|    CPU_CLOCKS_UNHALTED    |   PMC1  |       59904 |
+| RETIRED_SSE_AVX_FLOPS_ALL |   PMC2  |       20012 |
+|           MERGE           |   PMC3  |           0 |
+|       DRAM_CHANNEL_0      |   DFC0  |        2191 |
+|       DRAM_CHANNEL_1      |   DFC1  |        2145 |
++---------------------------+---------+-------------+
+
++-----------------------------------+--------------+
+|               Metric              |  HWThread 64 |
++-----------------------------------+--------------+
+|        Runtime (RDTSC) [s]        | 2.639966e-05 |
+|        Runtime unhalted [s]       |       0.0002 |
+|            Clock [MHz]            |    3340.5958 |
+|                CPI                |       0.7569 |
+|            DP [MFLOP/s]           |     758.0401 |
+|    Memory bandwidth [MBytes/s]    |   10511.6505 |
+|    Memory data volume [GBytes]    |       0.0003 |
+| Operational intensity [FLOP/Byte] |       0.0721 |
++-----------------------------------+--------------+
+
+Region <function_a>, Group 1: MEM_DP
++-------------------+-------------+
+|    Region Info    | HWThread 64 |
++-------------------+-------------+
+| RDTSC Runtime [s] |    0.094016 |
+|     call count    |           1 |
++-------------------+-------------+
+
++---------------------------+---------+-------------+
+|           Event           | Counter | HWThread 64 |
++---------------------------+---------+-------------+
+|      ACTUAL_CPU_CLOCK     |  FIXC1  |   314322700 |
+|       MAX_CPU_CLOCK       |  FIXC2  |   187902600 |
+|    RETIRED_INSTRUCTIONS   |   PMC0  |   600160500 |
+|    CPU_CLOCKS_UNHALTED    |   PMC1  |   312992100 |
+| RETIRED_SSE_AVX_FLOPS_ALL |   PMC2  |   200000000 |
+|           MERGE           |   PMC3  |           0 |
+|       DRAM_CHANNEL_0      |   DFC0  |     6386629 |
+|       DRAM_CHANNEL_1      |   DFC1  |     6385956 |
++---------------------------+---------+-------------+
+
++-----------------------------------+-------------+
+|               Metric              | HWThread 64 |
++-----------------------------------+-------------+
+|        Runtime (RDTSC) [s]        |      0.0940 |
+|        Runtime unhalted [s]       |      0.1575 |
+|            Clock [MHz]            |   3339.3025 |
+|                CPI                |      0.5215 |
+|            DP [MFLOP/s]           |   2127.3077 |
+|    Memory bandwidth [MBytes/s]    |   8694.7897 |
+|    Memory data volume [GBytes]    |      0.8174 |
+| Operational intensity [FLOP/Byte] |      0.2447 |
++-----------------------------------+-------------+
+
+Region <function_c>, Group 1: MEM_DP
++-------------------+-------------+
+|    Region Info    | HWThread 64 |
++-------------------+-------------+
+| RDTSC Runtime [s] |    0.000031 |
+|     call count    |           1 |
++-------------------+-------------+
+
++---------------------------+---------+-------------+
+|           Event           | Counter | HWThread 64 |
++---------------------------+---------+-------------+
+|      ACTUAL_CPU_CLOCK     |  FIXC1  |      346745 |
+|       MAX_CPU_CLOCK       |  FIXC2  |      206820 |
+|    RETIRED_INSTRUCTIONS   |   PMC0  |       99295 |
+|    CPU_CLOCKS_UNHALTED    |   PMC1  |       71255 |
+| RETIRED_SSE_AVX_FLOPS_ALL |   PMC2  |       15012 |
+|           MERGE           |   PMC3  |           0 |
+|       DRAM_CHANNEL_0      |   DFC0  |        2106 |
+|       DRAM_CHANNEL_1      |   DFC1  |        2141 |
++---------------------------+---------+-------------+
+
++-----------------------------------+--------------+
+|               Metric              |  HWThread 64 |
++-----------------------------------+--------------+
+|        Runtime (RDTSC) [s]        | 3.110852e-05 |
+|        Runtime unhalted [s]       |       0.0002 |
+|            Clock [MHz]            |    3346.8056 |
+|                CPI                |       0.7176 |
+|            DP [MFLOP/s]           |     482.5688 |
+|    Memory bandwidth [MBytes/s]    |    8737.4134 |
+|    Memory data volume [GBytes]    |       0.0003 |
+| Operational intensity [FLOP/Byte] |       0.0552 |
++-----------------------------------+--------------+
+
+INFO: You are running LIKWID in a cpuset with 1 CPUs. Taking given IDs as logical ID in cpuset
+--------------------------------------------------------------------------------
+CPU name:	AMD EPYC 7702 64-Core Processor
+CPU type:	AMD K17 (Zen2) architecture
+CPU clock:	2.00 GHz
+--------------------------------------------------------------------------------
+For correctness checking, partial results have been written to partial_results.out
+--------------------------------------------------------------------------------
+Region <init_datastructures>, Group 1: MEM_DP
++-------------------+-------------+
+|    Region Info    | HWThread 64 |
++-------------------+-------------+
+| RDTSC Runtime [s] |    0.436412 |
+|     call count    |           1 |
++-------------------+-------------+
+
++---------------------------+---------+-------------+
+|           Event           | Counter | HWThread 64 |
++---------------------------+---------+-------------+
+|      ACTUAL_CPU_CLOCK     |  FIXC1  |  1457511000 |
+|       MAX_CPU_CLOCK       |  FIXC2  |   871438000 |
+|    RETIRED_INSTRUCTIONS   |   PMC0  |  2800232000 |
+|    CPU_CLOCKS_UNHALTED    |   PMC1  |   592783100 |
+| RETIRED_SSE_AVX_FLOPS_ALL |   PMC2  |          12 |
+|           MERGE           |   PMC3  |           0 |
+|       DRAM_CHANNEL_0      |   DFC0  |    50823640 |
+|       DRAM_CHANNEL_1      |   DFC1  |    50822810 |
++---------------------------+---------+-------------+
+
++-----------------------------------+--------------+
+|               Metric              |  HWThread 64 |
++-----------------------------------+--------------+
+|        Runtime (RDTSC) [s]        |       0.4364 |
+|        Runtime unhalted [s]       |       0.7301 |
+|            Clock [MHz]            |    3338.7101 |
+|                CPI                |       0.2117 |
+|            DP [MFLOP/s]           | 2.749693e-05 |
+|    Memory bandwidth [MBytes/s]    |   14906.4802 |
+|    Memory data volume [GBytes]    |       6.5054 |
+| Operational intensity [FLOP/Byte] | 1.844629e-09 |
++-----------------------------------+--------------+
+
+Region <function_d>, Group 1: MEM_DP
++-------------------+-------------+
+|    Region Info    | HWThread 64 |
++-------------------+-------------+
+| RDTSC Runtime [s] |    0.000022 |
+|     call count    |           1 |
++-------------------+-------------+
+
++---------------------------+---------+-------------+
+|           Event           | Counter | HWThread 64 |
++---------------------------+---------+-------------+
+|      ACTUAL_CPU_CLOCK     |  FIXC1  |      310189 |
+|       MAX_CPU_CLOCK       |  FIXC2  |      185200 |
+|    RETIRED_INSTRUCTIONS   |   PMC0  |      129126 |
+|    CPU_CLOCKS_UNHALTED    |   PMC1  |      102462 |
+| RETIRED_SSE_AVX_FLOPS_ALL |   PMC2  |       40012 |
+|           MERGE           |   PMC3  |           0 |
+|       DRAM_CHANNEL_0      |   DFC0  |        5613 |
+|       DRAM_CHANNEL_1      |   DFC1  |        5482 |
++---------------------------+---------+-------------+
+
++-----------------------------------+--------------+
+|               Metric              |  HWThread 64 |
++-----------------------------------+--------------+
+|        Runtime (RDTSC) [s]        | 2.181112e-05 |
+|        Runtime unhalted [s]       |       0.0002 |
+|            Clock [MHz]            |    3343.4034 |
+|                CPI                |       0.7935 |
+|            DP [MFLOP/s]           |    1834.4771 |
+|    Memory bandwidth [MBytes/s]    |   32555.8706 |
+|    Memory data volume [GBytes]    |       0.0007 |
+| Operational intensity [FLOP/Byte] |       0.0563 |
++-----------------------------------+--------------+
+
+Region <function_b>, Group 1: MEM_DP
++-------------------+-------------+
+|    Region Info    | HWThread 64 |
++-------------------+-------------+
+| RDTSC Runtime [s] |    0.000054 |
+|     call count    |           1 |
++-------------------+-------------+
+
++---------------------------+---------+-------------+
+|           Event           | Counter | HWThread 64 |
++---------------------------+---------+-------------+
+|      ACTUAL_CPU_CLOCK     |  FIXC1  |      428853 |
+|       MAX_CPU_CLOCK       |  FIXC2  |      256800 |
+|    RETIRED_INSTRUCTIONS   |   PMC0  |      149343 |
+|    CPU_CLOCKS_UNHALTED    |   PMC1  |       91337 |
+| RETIRED_SSE_AVX_FLOPS_ALL |   PMC2  |       40012 |
+|           MERGE           |   PMC3  |           0 |
+|       DRAM_CHANNEL_0      |   DFC0  |        4528 |
+|       DRAM_CHANNEL_1      |   DFC1  |        4462 |
++---------------------------+---------+-------------+
+
++-----------------------------------+-------------+
+|               Metric              | HWThread 64 |
++-----------------------------------+-------------+
+|        Runtime (RDTSC) [s]        |      0.0001 |
+|        Runtime unhalted [s]       |      0.0002 |
+|            Clock [MHz]            |   3333.6254 |
+|                CPI                |      0.6116 |
+|            DP [MFLOP/s]           |    744.8071 |
+|    Memory bandwidth [MBytes/s]    |  10710.0928 |
+|    Memory data volume [GBytes]    |      0.0006 |
+| Operational intensity [FLOP/Byte] |      0.0695 |
++-----------------------------------+-------------+
+
+Region <function_a>, Group 1: MEM_DP
++-------------------+-------------+
+|    Region Info    | HWThread 64 |
++-------------------+-------------+
+| RDTSC Runtime [s] |    0.375783 |
+|     call count    |           1 |
++-------------------+-------------+
+
++---------------------------+---------+-------------+
+|           Event           | Counter | HWThread 64 |
++---------------------------+---------+-------------+
+|      ACTUAL_CPU_CLOCK     |  FIXC1  |  1255345000 |
+|       MAX_CPU_CLOCK       |  FIXC2  |   750387100 |
+|    RETIRED_INSTRUCTIONS   |   PMC0  |  2400311000 |
+|    CPU_CLOCKS_UNHALTED    |   PMC1  |  1252245000 |
+| RETIRED_SSE_AVX_FLOPS_ALL |   PMC2  |   800000000 |
+|           MERGE           |   PMC3  |           0 |
+|       DRAM_CHANNEL_0      |   DFC0  |    25141220 |
+|       DRAM_CHANNEL_1      |   DFC1  |    25140900 |
++---------------------------+---------+-------------+
+
++-----------------------------------+-------------+
+|               Metric              | HWThread 64 |
++-----------------------------------+-------------+
+|        Runtime (RDTSC) [s]        |      0.3758 |
+|        Runtime unhalted [s]       |      0.6289 |
+|            Clock [MHz]            |   3339.4974 |
+|                CPI                |      0.5217 |
+|            DP [MFLOP/s]           |   2128.8910 |
+|    Memory bandwidth [MBytes/s]    |   8563.6124 |
+|    Memory data volume [GBytes]    |      3.2181 |
+| Operational intensity [FLOP/Byte] |      0.2486 |
++-----------------------------------+-------------+
+
+Region <function_c>, Group 1: MEM_DP
++-------------------+-------------+
+|    Region Info    | HWThread 64 |
++-------------------+-------------+
+| RDTSC Runtime [s] |    0.000061 |
+|     call count    |           1 |
++-------------------+-------------+
+
++---------------------------+---------+-------------+
+|           Event           | Counter | HWThread 64 |
++---------------------------+---------+-------------+
+|      ACTUAL_CPU_CLOCK     |  FIXC1  |      445215 |
+|       MAX_CPU_CLOCK       |  FIXC2  |      266960 |
+|    RETIRED_INSTRUCTIONS   |   PMC0  |      189490 |
+|    CPU_CLOCKS_UNHALTED    |   PMC1  |      109505 |
+| RETIRED_SSE_AVX_FLOPS_ALL |   PMC2  |       30012 |
+|           MERGE           |   PMC3  |           0 |
+|       DRAM_CHANNEL_0      |   DFC0  |        4231 |
+|       DRAM_CHANNEL_1      |   DFC1  |        4223 |
++---------------------------+---------+-------------+
+
++-----------------------------------+-------------+
+|               Metric              | HWThread 64 |
++-----------------------------------+-------------+
+|        Runtime (RDTSC) [s]        |      0.0001 |
+|        Runtime unhalted [s]       |      0.0002 |
+|            Clock [MHz]            |   3329.1009 |
+|                CPI                |      0.5779 |
+|            DP [MFLOP/s]           |    488.5893 |
+|    Memory bandwidth [MBytes/s]    |   8808.2829 |
+|    Memory data volume [GBytes]    |      0.0005 |
+| Operational intensity [FLOP/Byte] |      0.0555 |
++-----------------------------------+-------------+
+
+INFO: You are running LIKWID in a cpuset with 1 CPUs. Taking given IDs as logical ID in cpuset
+--------------------------------------------------------------------------------
+CPU name:	AMD EPYC 7702 64-Core Processor
+CPU type:	AMD K17 (Zen2) architecture
+CPU clock:	2.00 GHz
+--------------------------------------------------------------------------------
+For correctness checking, partial results have been written to partial_results.out
+--------------------------------------------------------------------------------
+Region <init_datastructures>, Group 1: MEM_DP
++-------------------+-------------+
+|    Region Info    | HWThread 64 |
++-------------------+-------------+
+| RDTSC Runtime [s] |    0.982454 |
+|     call count    |           1 |
++-------------------+-------------+
+
++---------------------------+---------+-------------+
+|           Event           | Counter | HWThread 64 |
++---------------------------+---------+-------------+
+|      ACTUAL_CPU_CLOCK     |  FIXC1  |  3281483000 |
+|       MAX_CPU_CLOCK       |  FIXC2  |  1961428000 |
+|    RETIRED_INSTRUCTIONS   |   PMC0  |  6300346000 |
+|    CPU_CLOCKS_UNHALTED    |   PMC1  |  1334248000 |
+| RETIRED_SSE_AVX_FLOPS_ALL |   PMC2  |          12 |
+|           MERGE           |   PMC3  |           0 |
+|       DRAM_CHANNEL_0      |   DFC0  |   114452500 |
+|       DRAM_CHANNEL_1      |   DFC1  |   114454000 |
++---------------------------+---------+-------------+
+
++-----------------------------------+--------------+
+|               Metric              |  HWThread 64 |
++-----------------------------------+--------------+
+|        Runtime (RDTSC) [s]        |       0.9825 |
+|        Runtime unhalted [s]       |       1.6439 |
+|            Clock [MHz]            |    3339.6170 |
+|                CPI                |       0.2118 |
+|            DP [MFLOP/s]           | 1.221432e-05 |
+|    Memory bandwidth [MBytes/s]    |   14911.6605 |
+|    Memory data volume [GBytes]    |      14.6500 |
+| Operational intensity [FLOP/Byte] | 8.191117e-10 |
++-----------------------------------+--------------+
+
+Region <function_d>, Group 1: MEM_DP
++-------------------+-------------+
+|    Region Info    | HWThread 64 |
++-------------------+-------------+
+| RDTSC Runtime [s] |    0.000034 |
+|     call count    |           1 |
++-------------------+-------------+
+
++---------------------------+---------+-------------+
+|           Event           | Counter | HWThread 64 |
++---------------------------+---------+-------------+
+|      ACTUAL_CPU_CLOCK     |  FIXC1  |      354516 |
+|       MAX_CPU_CLOCK       |  FIXC2  |      223000 |
+|    RETIRED_INSTRUCTIONS   |   PMC0  |      189126 |
+|    CPU_CLOCKS_UNHALTED    |   PMC1  |      142796 |
+| RETIRED_SSE_AVX_FLOPS_ALL |   PMC2  |       60012 |
+|           MERGE           |   PMC3  |           0 |
+|       DRAM_CHANNEL_0      |   DFC0  |        9005 |
+|       DRAM_CHANNEL_1      |   DFC1  |        9022 |
++---------------------------+---------+-------------+
+
++-----------------------------------+--------------+
+|               Metric              |  HWThread 64 |
++-----------------------------------+--------------+
+|        Runtime (RDTSC) [s]        | 3.401485e-05 |
+|        Runtime unhalted [s]       |       0.0002 |
+|            Clock [MHz]            |    3173.4368 |
+|                CPI                |       0.7550 |
+|            DP [MFLOP/s]           |    1764.2882 |
+|    Memory bandwidth [MBytes/s]    |   33918.3621 |
+|    Memory data volume [GBytes]    |       0.0012 |
+| Operational intensity [FLOP/Byte] |       0.0520 |
++-----------------------------------+--------------+
+
+Region <function_b>, Group 1: MEM_DP
++-------------------+-------------+
+|    Region Info    | HWThread 64 |
++-------------------+-------------+
+| RDTSC Runtime [s] |    0.000080 |
+|     call count    |           1 |
++-------------------+-------------+
+
++---------------------------+---------+-------------+
+|           Event           | Counter | HWThread 64 |
++---------------------------+---------+-------------+
+|      ACTUAL_CPU_CLOCK     |  FIXC1  |      509385 |
+|       MAX_CPU_CLOCK       |  FIXC2  |      304840 |
+|    RETIRED_INSTRUCTIONS   |   PMC0  |      219363 |
+|    CPU_CLOCKS_UNHALTED    |   PMC1  |      121813 |
+| RETIRED_SSE_AVX_FLOPS_ALL |   PMC2  |       60012 |
+|           MERGE           |   PMC3  |           0 |
+|       DRAM_CHANNEL_0      |   DFC0  |        5836 |
+|       DRAM_CHANNEL_1      |   DFC1  |        5840 |
++---------------------------+---------+-------------+
+
++-----------------------------------+-------------+
+|               Metric              | HWThread 64 |
++-----------------------------------+-------------+
+|        Runtime (RDTSC) [s]        |      0.0001 |
+|        Runtime unhalted [s]       |      0.0003 |
+|            Clock [MHz]            |   3335.5932 |
+|                CPI                |      0.5553 |
+|            DP [MFLOP/s]           |    753.0498 |
+|    Memory bandwidth [MBytes/s]    |   9376.9081 |
+|    Memory data volume [GBytes]    |      0.0007 |
+| Operational intensity [FLOP/Byte] |      0.0803 |
++-----------------------------------+-------------+
+
+Region <function_a>, Group 1: MEM_DP
++-------------------+-------------+
+|    Region Info    | HWThread 64 |
++-------------------+-------------+
+| RDTSC Runtime [s] |    0.841245 |
+|     call count    |           1 |
++-------------------+-------------+
+
++---------------------------+---------+-------------+
+|           Event           | Counter | HWThread 64 |
++---------------------------+---------+-------------+
+|      ACTUAL_CPU_CLOCK     |  FIXC1  |  2810576000 |
+|       MAX_CPU_CLOCK       |  FIXC2  |  1679528000 |
+|    RETIRED_INSTRUCTIONS   |   PMC0  |  5400461000 |
+|    CPU_CLOCKS_UNHALTED    |   PMC1  |  2803755000 |
+| RETIRED_SSE_AVX_FLOPS_ALL |   PMC2  |  1800000000 |
+|           MERGE           |   PMC3  |           0 |
+|       DRAM_CHANNEL_0      |   DFC0  |    56403590 |
+|       DRAM_CHANNEL_1      |   DFC1  |    56403380 |
++---------------------------+---------+-------------+
+
++-----------------------------------+-------------+
+|               Metric              | HWThread 64 |
++-----------------------------------+-------------+
+|        Runtime (RDTSC) [s]        |      0.8412 |
+|        Runtime unhalted [s]       |      1.4080 |
+|            Clock [MHz]            |   3340.4653 |
+|                CPI                |      0.5192 |
+|            DP [MFLOP/s]           |   2139.6868 |
+|    Memory bandwidth [MBytes/s]    |   8582.1009 |
+|    Memory data volume [GBytes]    |      7.2196 |
+| Operational intensity [FLOP/Byte] |      0.2493 |
++-----------------------------------+-------------+
+
+Region <function_c>, Group 1: MEM_DP
++-------------------+-------------+
+|    Region Info    | HWThread 64 |
++-------------------+-------------+
+| RDTSC Runtime [s] |    0.000092 |
+|     call count    |           1 |
++-------------------+-------------+
+
++---------------------------+---------+-------------+
+|           Event           | Counter | HWThread 64 |
++---------------------------+---------+-------------+
+|      ACTUAL_CPU_CLOCK     |  FIXC1  |      551596 |
+|       MAX_CPU_CLOCK       |  FIXC2  |      329700 |
+|    RETIRED_INSTRUCTIONS   |   PMC0  |      279509 |
+|    CPU_CLOCKS_UNHALTED    |   PMC1  |      160241 |
+| RETIRED_SSE_AVX_FLOPS_ALL |   PMC2  |       45012 |
+|           MERGE           |   PMC3  |           0 |
+|       DRAM_CHANNEL_0      |   DFC0  |        6108 |
+|       DRAM_CHANNEL_1      |   DFC1  |        6137 |
++---------------------------+---------+-------------+
+
++-----------------------------------+-------------+
+|               Metric              | HWThread 64 |
++-----------------------------------+-------------+
+|        Runtime (RDTSC) [s]        |      0.0001 |
+|        Runtime unhalted [s]       |      0.0003 |
+|            Clock [MHz]            |   3339.6506 |
+|                CPI                |      0.5733 |
+|            DP [MFLOP/s]           |    489.8722 |
+|    Memory bandwidth [MBytes/s]    |   8528.9044 |
+|    Memory data volume [GBytes]    |      0.0008 |
+| Operational intensity [FLOP/Byte] |      0.0574 |
++-----------------------------------+-------------+
+
+INFO: You are running LIKWID in a cpuset with 1 CPUs. Taking given IDs as logical ID in cpuset
+--------------------------------------------------------------------------------
+CPU name:	AMD EPYC 7702 64-Core Processor
+CPU type:	AMD K17 (Zen2) architecture
+CPU clock:	2.00 GHz
+--------------------------------------------------------------------------------
+For correctness checking, partial results have been written to partial_results.out
+--------------------------------------------------------------------------------
+Region <init_datastructures>, Group 1: MEM_DP
++-------------------+-------------+
+|    Region Info    | HWThread 64 |
++-------------------+-------------+
+| RDTSC Runtime [s] |    1.745199 |
+|     call count    |           1 |
++-------------------+-------------+
+
++---------------------------+---------+-------------+
+|           Event           | Counter | HWThread 64 |
++---------------------------+---------+-------------+
+|      ACTUAL_CPU_CLOCK     |  FIXC1  |  5828949000 |
+|       MAX_CPU_CLOCK       |  FIXC2  |  3484042000 |
+|    RETIRED_INSTRUCTIONS   |   PMC0  | 11200460000 |
+|    CPU_CLOCKS_UNHALTED    |   PMC1  |  2368940000 |
+| RETIRED_SSE_AVX_FLOPS_ALL |   PMC2  |          12 |
+|           MERGE           |   PMC3  |           0 |
+|       DRAM_CHANNEL_0      |   DFC0  |   203547400 |
+|       DRAM_CHANNEL_1      |   DFC1  |   203548500 |
++---------------------------+---------+-------------+
+
++-----------------------------------+--------------+
+|               Metric              |  HWThread 64 |
++-----------------------------------+--------------+
+|        Runtime (RDTSC) [s]        |       1.7452 |
+|        Runtime unhalted [s]       |       2.9200 |
+|            Clock [MHz]            |    3339.7150 |
+|                CPI                |       0.2115 |
+|            DP [MFLOP/s]           | 6.876007e-06 |
+|    Memory bandwidth [MBytes/s]    |   14929.0354 |
+|    Memory data volume [GBytes]    |      26.0541 |
+| Operational intensity [FLOP/Byte] | 4.605794e-10 |
++-----------------------------------+--------------+
+
+Region <function_d>, Group 1: MEM_DP
++-------------------+-------------+
+|    Region Info    | HWThread 64 |
++-------------------+-------------+
+| RDTSC Runtime [s] |    0.000042 |
+|     call count    |           1 |
++-------------------+-------------+
+
++---------------------------+---------+-------------+
+|           Event           | Counter | HWThread 64 |
++---------------------------+---------+-------------+
+|      ACTUAL_CPU_CLOCK     |  FIXC1  |      413862 |
+|       MAX_CPU_CLOCK       |  FIXC2  |      247840 |
+|    RETIRED_INSTRUCTIONS   |   PMC0  |      249126 |
+|    CPU_CLOCKS_UNHALTED    |   PMC1  |      169789 |
+| RETIRED_SSE_AVX_FLOPS_ALL |   PMC2  |       80012 |
+|           MERGE           |   PMC3  |           0 |
+|       DRAM_CHANNEL_0      |   DFC0  |       11596 |
+|       DRAM_CHANNEL_1      |   DFC1  |       11668 |
++---------------------------+---------+-------------+
+
++-----------------------------------+--------------+
+|               Metric              |  HWThread 64 |
++-----------------------------------+--------------+
+|        Runtime (RDTSC) [s]        | 4.185949e-05 |
+|        Runtime unhalted [s]       |       0.0002 |
+|            Clock [MHz]            |    3333.3943 |
+|                CPI                |       0.6815 |
+|            DP [MFLOP/s]           |    1911.4423 |
+|    Memory bandwidth [MBytes/s]    |   35568.8997 |
+|    Memory data volume [GBytes]    |       0.0015 |
+| Operational intensity [FLOP/Byte] |       0.0537 |
++-----------------------------------+--------------+
+
+Region <function_b>, Group 1: MEM_DP
++-------------------+-------------+
+|    Region Info    | HWThread 64 |
++-------------------+-------------+
+| RDTSC Runtime [s] |    0.000107 |
+|     call count    |           1 |
++-------------------+-------------+
+
++---------------------------+---------+-------------+
+|           Event           | Counter | HWThread 64 |
++---------------------------+---------+-------------+
+|      ACTUAL_CPU_CLOCK     |  FIXC1  |      609199 |
+|       MAX_CPU_CLOCK       |  FIXC2  |      362460 |
+|    RETIRED_INSTRUCTIONS   |   PMC0  |      289301 |
+|    CPU_CLOCKS_UNHALTED    |   PMC1  |      150545 |
+| RETIRED_SSE_AVX_FLOPS_ALL |   PMC2  |       80012 |
+|           MERGE           |   PMC3  |           0 |
+|       DRAM_CHANNEL_0      |   DFC0  |        7437 |
+|       DRAM_CHANNEL_1      |   DFC1  |        7521 |
++---------------------------+---------+-------------+
+
++-----------------------------------+-------------+
+|               Metric              | HWThread 64 |
++-----------------------------------+-------------+
+|        Runtime (RDTSC) [s]        |      0.0001 |
+|        Runtime unhalted [s]       |      0.0003 |
+|            Clock [MHz]            |   3355.0704 |
+|                CPI                |      0.5204 |
+|            DP [MFLOP/s]           |    746.1467 |
+|    Memory bandwidth [MBytes/s]    |   8927.3511 |
+|    Memory data volume [GBytes]    |      0.0010 |
+| Operational intensity [FLOP/Byte] |      0.0836 |
++-----------------------------------+-------------+
+
+Region <function_a>, Group 1: MEM_DP
++-------------------+-------------+
+|    Region Info    | HWThread 64 |
++-------------------+-------------+
+| RDTSC Runtime [s] |    1.498716 |
+|     call count    |           1 |
++-------------------+-------------+
+
++---------------------------+---------+-------------+
+|           Event           | Counter | HWThread 64 |
++---------------------------+---------+-------------+
+|      ACTUAL_CPU_CLOCK     |  FIXC1  |  5008733000 |
+|       MAX_CPU_CLOCK       |  FIXC2  |  2991986000 |
+|    RETIRED_INSTRUCTIONS   |   PMC0  |  9600616000 |
+|    CPU_CLOCKS_UNHALTED    |   PMC1  |  4994627000 |
+| RETIRED_SSE_AVX_FLOPS_ALL |   PMC2  |  3200000000 |
+|           MERGE           |   PMC3  |           0 |
+|       DRAM_CHANNEL_0      |   DFC0  |   100170400 |
+|       DRAM_CHANNEL_1      |   DFC1  |   100168800 |
++---------------------------+---------+-------------+
+
++-----------------------------------+-------------+
+|               Metric              | HWThread 64 |
++-----------------------------------+-------------+
+|        Runtime (RDTSC) [s]        |      1.4987 |
+|        Runtime unhalted [s]       |      2.5091 |
+|            Clock [MHz]            |   3341.7262 |
+|                CPI                |      0.5202 |
+|            DP [MFLOP/s]           |   2135.1610 |
+|    Memory bandwidth [MBytes/s]    |   8555.1291 |
+|    Memory data volume [GBytes]    |     12.8217 |
+| Operational intensity [FLOP/Byte] |      0.2496 |
++-----------------------------------+-------------+
+
+Region <function_c>, Group 1: MEM_DP
++-------------------+-------------+
+|    Region Info    | HWThread 64 |
++-------------------+-------------+
+| RDTSC Runtime [s] |    0.000118 |
+|     call count    |           1 |
++-------------------+-------------+
+
++---------------------------+---------+-------------+
+|           Event           | Counter | HWThread 64 |
++---------------------------+---------+-------------+
+|      ACTUAL_CPU_CLOCK     |  FIXC1  |      641414 |
+|       MAX_CPU_CLOCK       |  FIXC2  |      383940 |
+|    RETIRED_INSTRUCTIONS   |   PMC0  |      369448 |
+|    CPU_CLOCKS_UNHALTED    |   PMC1  |      184574 |
+| RETIRED_SSE_AVX_FLOPS_ALL |   PMC2  |       60012 |
+|           MERGE           |   PMC3  |           0 |
+|       DRAM_CHANNEL_0      |   DFC0  |        8195 |
+|       DRAM_CHANNEL_1      |   DFC1  |        8221 |
++---------------------------+---------+-------------+
+
++-----------------------------------+-------------+
+|               Metric              | HWThread 64 |
++-----------------------------------+-------------+
+|        Runtime (RDTSC) [s]        |      0.0001 |
+|        Runtime unhalted [s]       |      0.0003 |
+|            Clock [MHz]            |   3334.8600 |
+|                CPI                |      0.4996 |
+|            DP [MFLOP/s]           |    509.6405 |
+|    Memory bandwidth [MBytes/s]    |   8922.2240 |
+|    Memory data volume [GBytes]    |      0.0011 |
+| Operational intensity [FLOP/Byte] |      0.0571 |
++-----------------------------------+-------------+
+
+INFO: You are running LIKWID in a cpuset with 1 CPUs. Taking given IDs as logical ID in cpuset
+--------------------------------------------------------------------------------
+CPU name:	AMD EPYC 7702 64-Core Processor
+CPU type:	AMD K17 (Zen2) architecture
+CPU clock:	2.00 GHz
+--------------------------------------------------------------------------------
+For correctness checking, partial results have been written to partial_results.out
+--------------------------------------------------------------------------------
+Region <init_datastructures>, Group 1: MEM_DP
++-------------------+-------------+
+|    Region Info    | HWThread 64 |
++-------------------+-------------+
+| RDTSC Runtime [s] |    2.725264 |
+|     call count    |           1 |
++-------------------+-------------+
+
++---------------------------+---------+-------------+
+|           Event           | Counter | HWThread 64 |
++---------------------------+---------+-------------+
+|      ACTUAL_CPU_CLOCK     |  FIXC1  |  9103116000 |
+|       MAX_CPU_CLOCK       |  FIXC2  |  5440532000 |
+|    RETIRED_INSTRUCTIONS   |   PMC0  | 17500580000 |
+|    CPU_CLOCKS_UNHALTED    |   PMC1  |  3702318000 |
+| RETIRED_SSE_AVX_FLOPS_ALL |   PMC2  |          12 |
+|           MERGE           |   PMC3  |           0 |
+|       DRAM_CHANNEL_0      |   DFC0  |   318099000 |
+|       DRAM_CHANNEL_1      |   DFC1  |   318101000 |
++---------------------------+---------+-------------+
+
++-----------------------------------+--------------+
+|               Metric              |  HWThread 64 |
++-----------------------------------+--------------+
+|        Runtime (RDTSC) [s]        |       2.7253 |
+|        Runtime unhalted [s]       |       4.5601 |
+|            Clock [MHz]            |    3340.1068 |
+|                CPI                |       0.2116 |
+|            DP [MFLOP/s]           | 4.403243e-06 |
+|    Memory bandwidth [MBytes/s]    |   14940.4975 |
+|    Memory data volume [GBytes]    |      40.7168 |
+| Operational intensity [FLOP/Byte] | 2.947186e-10 |
++-----------------------------------+--------------+
+
+Region <function_d>, Group 1: MEM_DP
++-------------------+-------------+
+|    Region Info    | HWThread 64 |
++-------------------+-------------+
+| RDTSC Runtime [s] |    0.000055 |
+|     call count    |           1 |
++-------------------+-------------+
+
++---------------------------+---------+-------------+
+|           Event           | Counter | HWThread 64 |
++---------------------------+---------+-------------+
+|      ACTUAL_CPU_CLOCK     |  FIXC1  |      426629 |
+|       MAX_CPU_CLOCK       |  FIXC2  |      255080 |
+|    RETIRED_INSTRUCTIONS   |   PMC0  |      309126 |
+|    CPU_CLOCKS_UNHALTED    |   PMC1  |      212516 |
+| RETIRED_SSE_AVX_FLOPS_ALL |   PMC2  |      100012 |
+|           MERGE           |   PMC3  |           0 |
+|       DRAM_CHANNEL_0      |   DFC0  |       13168 |
+|       DRAM_CHANNEL_1      |   DFC1  |       13118 |
++---------------------------+---------+-------------+
+
++-----------------------------------+-------------+
+|               Metric              | HWThread 64 |
++-----------------------------------+-------------+
+|        Runtime (RDTSC) [s]        |      0.0001 |
+|        Runtime unhalted [s]       |      0.0002 |
+|            Clock [MHz]            |   3338.7632 |
+|                CPI                |      0.6875 |
+|            DP [MFLOP/s]           |   1833.3088 |
+|    Memory bandwidth [MBytes/s]    |  30838.1267 |
+|    Memory data volume [GBytes]    |      0.0017 |
+| Operational intensity [FLOP/Byte] |      0.0594 |
++-----------------------------------+-------------+
+
+Region <function_b>, Group 1: MEM_DP
++-------------------+-------------+
+|    Region Info    | HWThread 64 |
++-------------------+-------------+
+| RDTSC Runtime [s] |    0.000129 |
+|     call count    |           1 |
++-------------------+-------------+
+
++---------------------------+---------+-------------+
+|           Event           | Counter | HWThread 64 |
++---------------------------+---------+-------------+
+|      ACTUAL_CPU_CLOCK     |  FIXC1  |      720934 |
+|       MAX_CPU_CLOCK       |  FIXC2  |      415180 |
+|    RETIRED_INSTRUCTIONS   |   PMC0  |      359320 |
+|    CPU_CLOCKS_UNHALTED    |   PMC1  |      176868 |
+| RETIRED_SSE_AVX_FLOPS_ALL |   PMC2  |      100012 |
+|           MERGE           |   PMC3  |           0 |
+|       DRAM_CHANNEL_0      |   DFC0  |        8464 |
+|       DRAM_CHANNEL_1      |   DFC1  |        8491 |
++---------------------------+---------+-------------+
+
++-----------------------------------+-------------+
+|               Metric              | HWThread 64 |
++-----------------------------------+-------------+
+|        Runtime (RDTSC) [s]        |      0.0001 |
+|        Runtime unhalted [s]       |      0.0004 |
+|            Clock [MHz]            |   3466.3366 |
+|                CPI                |      0.4922 |
+|            DP [MFLOP/s]           |    775.8112 |
+|    Memory bandwidth [MBytes/s]    |   8417.4729 |
+|    Memory data volume [GBytes]    |      0.0011 |
+| Operational intensity [FLOP/Byte] |      0.0922 |
++-----------------------------------+-------------+
+
+Region <function_a>, Group 1: MEM_DP
++-------------------+-------------+
+|    Region Info    | HWThread 64 |
++-------------------+-------------+
+| RDTSC Runtime [s] |    2.345272 |
+|     call count    |           1 |
++-------------------+-------------+
+
++---------------------------+---------+-------------+
+|           Event           | Counter | HWThread 64 |
++---------------------------+---------+-------------+
+|      ACTUAL_CPU_CLOCK     |  FIXC1  |  7839821000 |
+|       MAX_CPU_CLOCK       |  FIXC2  |  4681974000 |
+|    RETIRED_INSTRUCTIONS   |   PMC0  | 15000770000 |
+|    CPU_CLOCKS_UNHALTED    |   PMC1  |  7816619000 |
+| RETIRED_SSE_AVX_FLOPS_ALL |   PMC2  |  5000000000 |
+|           MERGE           |   PMC3  |           0 |
+|       DRAM_CHANNEL_0      |   DFC0  |   156446900 |
+|       DRAM_CHANNEL_1      |   DFC1  |   156442400 |
++---------------------------+---------+-------------+
+
++-----------------------------------+-------------+
+|               Metric              | HWThread 64 |
++-----------------------------------+-------------+
+|        Runtime (RDTSC) [s]        |      2.3453 |
+|        Runtime unhalted [s]       |      3.9273 |
+|            Clock [MHz]            |   3342.6338 |
+|                CPI                |      0.5211 |
+|            DP [MFLOP/s]           |   2131.9489 |
+|    Memory bandwidth [MBytes/s]    |   8538.4191 |
+|    Memory data volume [GBytes]    |     20.0249 |
+| Operational intensity [FLOP/Byte] |      0.2497 |
++-----------------------------------+-------------+
+
+Region <function_c>, Group 1: MEM_DP
++-------------------+-------------+
+|    Region Info    | HWThread 64 |
++-------------------+-------------+
+| RDTSC Runtime [s] |    0.000142 |
+|     call count    |           1 |
++-------------------+-------------+
+
++---------------------------+---------+-------------+
+|           Event           | Counter | HWThread 64 |
++---------------------------+---------+-------------+
+|      ACTUAL_CPU_CLOCK     |  FIXC1  |      718810 |
+|       MAX_CPU_CLOCK       |  FIXC2  |      428920 |
+|    RETIRED_INSTRUCTIONS   |   PMC0  |      459467 |
+|    CPU_CLOCKS_UNHALTED    |   PMC1  |      218429 |
+| RETIRED_SSE_AVX_FLOPS_ALL |   PMC2  |       75012 |
+|           MERGE           |   PMC3  |           0 |
+|       DRAM_CHANNEL_0      |   DFC0  |       10440 |
+|       DRAM_CHANNEL_1      |   DFC1  |       10412 |
++---------------------------+---------+-------------+
+
++-----------------------------------+-------------+
+|               Metric              | HWThread 64 |
++-----------------------------------+-------------+
+|        Runtime (RDTSC) [s]        |      0.0001 |
+|        Runtime unhalted [s]       |      0.0004 |
+|            Clock [MHz]            |   3345.4109 |
+|                CPI                |      0.4754 |
+|            DP [MFLOP/s]           |    526.5914 |
+|    Memory bandwidth [MBytes/s]    |   9368.5143 |
+|    Memory data volume [GBytes]    |      0.0013 |
+| Operational intensity [FLOP/Byte] |      0.0562 |
++-----------------------------------+-------------+
+
+INFO: You are running LIKWID in a cpuset with 1 CPUs. Taking given IDs as logical ID in cpuset
+--------------------------------------------------------------------------------
+CPU name:	AMD EPYC 7702 64-Core Processor
+CPU type:	AMD K17 (Zen2) architecture
+CPU clock:	2.00 GHz
+--------------------------------------------------------------------------------
+For correctness checking, partial results have been written to partial_results.out
+--------------------------------------------------------------------------------
+Region <init_datastructures>, Group 1: MEM_DP
++-------------------+-------------+
+|    Region Info    | HWThread 64 |
++-------------------+-------------+
+| RDTSC Runtime [s] |    3.924933 |
+|     call count    |           1 |
++-------------------+-------------+
+
++---------------------------+---------+-------------+
+|           Event           | Counter | HWThread 64 |
++---------------------------+---------+-------------+
+|      ACTUAL_CPU_CLOCK     |  FIXC1  | 13109450000 |
+|       MAX_CPU_CLOCK       |  FIXC2  |  7835356000 |
+|    RETIRED_INSTRUCTIONS   |   PMC0  | 25200690000 |
+|    CPU_CLOCKS_UNHALTED    |   PMC1  |  5331360000 |
+| RETIRED_SSE_AVX_FLOPS_ALL |   PMC2  |          12 |
+|           MERGE           |   PMC3  |           0 |
+|       DRAM_CHANNEL_0      |   DFC0  |   458106000 |
+|       DRAM_CHANNEL_1      |   DFC1  |   458110400 |
++---------------------------+---------+-------------+
+
++-----------------------------------+--------------+
+|               Metric              |  HWThread 64 |
++-----------------------------------+--------------+
+|        Runtime (RDTSC) [s]        |       3.9249 |
+|        Runtime unhalted [s]       |       6.5671 |
+|            Clock [MHz]            |    3339.9365 |
+|                CPI                |       0.2116 |
+|            DP [MFLOP/s]           | 3.057377e-06 |
+|    Memory bandwidth [MBytes/s]    |   14939.8345 |
+|    Memory data volume [GBytes]    |      58.6378 |
+| Operational intensity [FLOP/Byte] | 2.046460e-10 |
++-----------------------------------+--------------+
+
+Region <function_d>, Group 1: MEM_DP
++-------------------+-------------+
+|    Region Info    | HWThread 64 |
++-------------------+-------------+
+| RDTSC Runtime [s] |    0.000072 |
+|     call count    |           1 |
++-------------------+-------------+
+
++---------------------------+---------+-------------+
+|           Event           | Counter | HWThread 64 |
++---------------------------+---------+-------------+
+|      ACTUAL_CPU_CLOCK     |  FIXC1  |      483858 |
+|       MAX_CPU_CLOCK       |  FIXC2  |      289260 |
+|    RETIRED_INSTRUCTIONS   |   PMC0  |      369126 |
+|    CPU_CLOCKS_UNHALTED    |   PMC1  |      273466 |
+| RETIRED_SSE_AVX_FLOPS_ALL |   PMC2  |      120012 |
+|           MERGE           |   PMC3  |           0 |
+|       DRAM_CHANNEL_0      |   DFC0  |       15511 |
+|       DRAM_CHANNEL_1      |   DFC1  |       15503 |
++---------------------------+---------+-------------+
+
++-----------------------------------+-------------+
+|               Metric              | HWThread 64 |
++-----------------------------------+-------------+
+|        Runtime (RDTSC) [s]        |      0.0001 |
+|        Runtime unhalted [s]       |      0.0002 |
+|            Clock [MHz]            |   3339.1969 |
+|                CPI                |      0.7408 |
+|            DP [MFLOP/s]           |   1656.1043 |
+|    Memory bandwidth [MBytes/s]    |  27390.5511 |
+|    Memory data volume [GBytes]    |      0.0020 |
+| Operational intensity [FLOP/Byte] |      0.0605 |
++-----------------------------------+-------------+
+
+Region <function_b>, Group 1: MEM_DP
++-------------------+-------------+
+|    Region Info    | HWThread 64 |
++-------------------+-------------+
+| RDTSC Runtime [s] |    0.000159 |
+|     call count    |           1 |
++-------------------+-------------+
+
++---------------------------+---------+-------------+
+|           Event           | Counter | HWThread 64 |
++---------------------------+---------+-------------+
+|      ACTUAL_CPU_CLOCK     |  FIXC1  |      791869 |
+|       MAX_CPU_CLOCK       |  FIXC2  |      473500 |
+|    RETIRED_INSTRUCTIONS   |   PMC0  |      429340 |
+|    CPU_CLOCKS_UNHALTED    |   PMC1  |      207746 |
+| RETIRED_SSE_AVX_FLOPS_ALL |   PMC2  |      120012 |
+|           MERGE           |   PMC3  |           0 |
+|       DRAM_CHANNEL_0      |   DFC0  |       10846 |
+|       DRAM_CHANNEL_1      |   DFC1  |       10878 |
++---------------------------+---------+-------------+
+
++-----------------------------------+-------------+
+|               Metric              | HWThread 64 |
++-----------------------------------+-------------+
+|        Runtime (RDTSC) [s]        |      0.0002 |
+|        Runtime unhalted [s]       |      0.0004 |
+|            Clock [MHz]            |   3338.4574 |
+|                CPI                |      0.4839 |
+|            DP [MFLOP/s]           |    755.7954 |
+|    Memory bandwidth [MBytes/s]    |   8755.8710 |
+|    Memory data volume [GBytes]    |      0.0014 |
+| Operational intensity [FLOP/Byte] |      0.0863 |
++-----------------------------------+-------------+
+
+Region <function_a>, Group 1: MEM_DP
++-------------------+-------------+
+|    Region Info    | HWThread 64 |
++-------------------+-------------+
+| RDTSC Runtime [s] |    3.370180 |
+|     call count    |           1 |
++-------------------+-------------+
+
++---------------------------+---------+-------------+
+|           Event           | Counter | HWThread 64 |
++---------------------------+---------+-------------+
+|      ACTUAL_CPU_CLOCK     |  FIXC1  | 11260960000 |
+|       MAX_CPU_CLOCK       |  FIXC2  |  6727949000 |
+|    RETIRED_INSTRUCTIONS   |   PMC0  | 21601280000 |
+|    CPU_CLOCKS_UNHALTED    |   PMC1  | 11221720000 |
+| RETIRED_SSE_AVX_FLOPS_ALL |   PMC2  |  7200000000 |
+|           MERGE           |   PMC3  |           0 |
+|       DRAM_CHANNEL_0      |   DFC0  |   225231800 |
+|       DRAM_CHANNEL_1      |   DFC1  |   225231100 |
++---------------------------+---------+-------------+
+
++-----------------------------------+-------------+
+|               Metric              | HWThread 64 |
++-----------------------------------+-------------+
+|        Runtime (RDTSC) [s]        |      3.3702 |
+|        Runtime unhalted [s]       |      5.6411 |
+|            Clock [MHz]            |   3341.2210 |
+|                CPI                |      0.5195 |
+|            DP [MFLOP/s]           |   2136.3844 |
+|    Memory bandwidth [MBytes/s]    |   8554.3281 |
+|    Memory data volume [GBytes]    |     28.8296 |
+| Operational intensity [FLOP/Byte] |      0.2497 |
++-----------------------------------+-------------+
+
+Region <function_c>, Group 1: MEM_DP
++-------------------+-------------+
+|    Region Info    | HWThread 64 |
++-------------------+-------------+
+| RDTSC Runtime [s] |    0.000171 |
+|     call count    |           1 |
++-------------------+-------------+
+
++---------------------------+---------+-------------+
+|           Event           | Counter | HWThread 64 |
++---------------------------+---------+-------------+
+|      ACTUAL_CPU_CLOCK     |  FIXC1  |      823943 |
+|       MAX_CPU_CLOCK       |  FIXC2  |      492380 |
+|    RETIRED_INSTRUCTIONS   |   PMC0  |      549487 |
+|    CPU_CLOCKS_UNHALTED    |   PMC1  |      259667 |
+| RETIRED_SSE_AVX_FLOPS_ALL |   PMC2  |       90012 |
+|           MERGE           |   PMC3  |           0 |
+|       DRAM_CHANNEL_0      |   DFC0  |       12089 |
+|       DRAM_CHANNEL_1      |   DFC1  |       12124 |
++---------------------------+---------+-------------+
+
++-----------------------------------+-------------+
+|               Metric              | HWThread 64 |
++-----------------------------------+-------------+
+|        Runtime (RDTSC) [s]        |      0.0002 |
+|        Runtime unhalted [s]       |      0.0004 |
+|            Clock [MHz]            |   3340.4828 |
+|                CPI                |      0.4726 |
+|            DP [MFLOP/s]           |    526.8120 |
+|    Memory bandwidth [MBytes/s]    |   9069.5106 |
+|    Memory data volume [GBytes]    |      0.0015 |
+| Operational intensity [FLOP/Byte] |      0.0581 |
++-----------------------------------+-------------+
+
+INFO: You are running LIKWID in a cpuset with 1 CPUs. Taking given IDs as logical ID in cpuset
+--------------------------------------------------------------------------------
+CPU name:	AMD EPYC 7702 64-Core Processor
+CPU type:	AMD K17 (Zen2) architecture
+CPU clock:	2.00 GHz
+--------------------------------------------------------------------------------
+For correctness checking, partial results have been written to partial_results.out
+--------------------------------------------------------------------------------
+Region <init_datastructures>, Group 1: MEM_DP
++-------------------+-------------+
+|    Region Info    | HWThread 64 |
++-------------------+-------------+
+| RDTSC Runtime [s] |    0.660300 |
+|     call count    |           1 |
++-------------------+-------------+
+
++---------------------------+---------+-------------+
+|           Event           | Counter | HWThread 64 |
++---------------------------+---------+-------------+
+|      ACTUAL_CPU_CLOCK     |  FIXC1  |  2206162000 |
+|       MAX_CPU_CLOCK       |  FIXC2  |  1318392000 |
+|    RETIRED_INSTRUCTIONS   |   PMC0  |  4236014000 |
+|    CPU_CLOCKS_UNHALTED    |   PMC1  |   897608700 |
+| RETIRED_SSE_AVX_FLOPS_ALL |   PMC2  |          12 |
+|           MERGE           |   PMC3  |           0 |
+|       DRAM_CHANNEL_0      |   DFC0  |    76944360 |
+|       DRAM_CHANNEL_1      |   DFC1  |    76945810 |
++---------------------------+---------+-------------+
+
++-----------------------------------+--------------+
+|               Metric              |  HWThread 64 |
++-----------------------------------+--------------+
+|        Runtime (RDTSC) [s]        |       0.6603 |
+|        Runtime unhalted [s]       |       1.1052 |
+|            Clock [MHz]            |    3340.4499 |
+|                CPI                |       0.2119 |
+|            DP [MFLOP/s]           | 1.817355e-05 |
+|    Memory bandwidth [MBytes/s]    |   14915.8987 |
+|    Memory data volume [GBytes]    |       9.8490 |
+| Operational intensity [FLOP/Byte] | 1.218401e-09 |
++-----------------------------------+--------------+
+
+Region <function_d>, Group 1: MEM_DP
++-------------------+-------------+
+|    Region Info    | HWThread 64 |
++-------------------+-------------+
+| RDTSC Runtime [s] |    0.000276 |
+|     call count    |           1 |
++-------------------+-------------+
+
++---------------------------+---------+-------------+
+|           Event           | Counter | HWThread 64 |
++---------------------------+---------+-------------+
+|      ACTUAL_CPU_CLOCK     |  FIXC1  |     1172594 |
+|       MAX_CPU_CLOCK       |  FIXC2  |      700700 |
+|    RETIRED_INSTRUCTIONS   |   PMC0  |      429126 |
+|    CPU_CLOCKS_UNHALTED    |   PMC1  |      955397 |
+| RETIRED_SSE_AVX_FLOPS_ALL |   PMC2  |      140012 |
+|           MERGE           |   PMC3  |           0 |
+|       DRAM_CHANNEL_0      |   DFC0  |       17907 |
+|       DRAM_CHANNEL_1      |   DFC1  |       17963 |
++---------------------------+---------+-------------+
+
++-----------------------------------+-------------+
+|               Metric              | HWThread 64 |
++-----------------------------------+-------------+
+|        Runtime (RDTSC) [s]        |      0.0003 |
+|        Runtime unhalted [s]       |      0.0006 |
+|            Clock [MHz]            |   3340.6246 |
+|                CPI                |      2.2264 |
+|            DP [MFLOP/s]           |    506.5367 |
+|    Memory bandwidth [MBytes/s]    |   8305.3315 |
+|    Memory data volume [GBytes]    |      0.0023 |
+| Operational intensity [FLOP/Byte] |      0.0610 |
++-----------------------------------+-------------+
+
+Region <function_b>, Group 1: MEM_DP
++-------------------+-------------+
+|    Region Info    | HWThread 64 |
++-------------------+-------------+
+| RDTSC Runtime [s] |    0.000188 |
+|     call count    |           1 |
++-------------------+-------------+
+
++---------------------------+---------+-------------+
+|           Event           | Counter | HWThread 64 |
++---------------------------+---------+-------------+
+|      ACTUAL_CPU_CLOCK     |  FIXC1  |      877653 |
+|       MAX_CPU_CLOCK       |  FIXC2  |      527420 |
+|    RETIRED_INSTRUCTIONS   |   PMC0  |      499359 |
+|    CPU_CLOCKS_UNHALTED    |   PMC1  |      238484 |
+| RETIRED_SSE_AVX_FLOPS_ALL |   PMC2  |      140012 |
+|           MERGE           |   PMC3  |           0 |
+|       DRAM_CHANNEL_0      |   DFC0  |       11811 |
+|       DRAM_CHANNEL_1      |   DFC1  |       11672 |
++---------------------------+---------+-------------+
+
++-----------------------------------+-------------+
+|               Metric              | HWThread 64 |
++-----------------------------------+-------------+
+|        Runtime (RDTSC) [s]        |      0.0002 |
+|        Runtime unhalted [s]       |      0.0004 |
+|            Clock [MHz]            |   3321.8374 |
+|                CPI                |      0.4776 |
+|            DP [MFLOP/s]           |    745.0070 |
+|    Memory bandwidth [MBytes/s]    |   7997.0287 |
+|    Memory data volume [GBytes]    |      0.0015 |
+| Operational intensity [FLOP/Byte] |      0.0932 |
++-----------------------------------+-------------+
+
+Region <function_a>, Group 1: MEM_DP
++-------------------+-------------+
+|    Region Info    | HWThread 64 |
++-------------------+-------------+
+| RDTSC Runtime [s] |    4.478164 |
+|     call count    |           1 |
++-------------------+-------------+
+
++---------------------------+---------+-------------+
+|           Event           | Counter | HWThread 64 |
++---------------------------+---------+-------------+
+|      ACTUAL_CPU_CLOCK     |  FIXC1  | 14940080000 |
+|       MAX_CPU_CLOCK       |  FIXC2  |  8939742000 |
+|    RETIRED_INSTRUCTIONS   |   PMC0  | 29401090000 |
+|    CPU_CLOCKS_UNHALTED    |   PMC1  | 14862190000 |
+| RETIRED_SSE_AVX_FLOPS_ALL |   PMC2  |  9800000000 |
+|           MERGE           |   PMC3  |           0 |
+|       DRAM_CHANNEL_0      |   DFC0  |    76767180 |
+|       DRAM_CHANNEL_1      |   DFC1  |    76770340 |
++---------------------------+---------+-------------+
+
++-----------------------------------+-------------+
+|               Metric              | HWThread 64 |
++-----------------------------------+-------------+
+|        Runtime (RDTSC) [s]        |      4.4782 |
+|        Runtime unhalted [s]       |      7.4841 |
+|            Clock [MHz]            |   3336.1077 |
+|                CPI                |      0.5055 |
+|            DP [MFLOP/s]           |   2188.3969 |
+|    Memory bandwidth [MBytes/s]    |   2194.2924 |
+|    Memory data volume [GBytes]    |      9.8264 |
+| Operational intensity [FLOP/Byte] |      0.9973 |
++-----------------------------------+-------------+
+
+Region <function_c>, Group 1: MEM_DP
++-------------------+-------------+
+|    Region Info    | HWThread 64 |
++-------------------+-------------+
+| RDTSC Runtime [s] |    0.000202 |
+|     call count    |           1 |
++-------------------+-------------+
+
++---------------------------+---------+-------------+
+|           Event           | Counter | HWThread 64 |
++---------------------------+---------+-------------+
+|      ACTUAL_CPU_CLOCK     |  FIXC1  |      899461 |
+|       MAX_CPU_CLOCK       |  FIXC2  |      549880 |
+|    RETIRED_INSTRUCTIONS   |   PMC0  |      639506 |
+|    CPU_CLOCKS_UNHALTED    |   PMC1  |      297103 |
+| RETIRED_SSE_AVX_FLOPS_ALL |   PMC2  |      105012 |
+|           MERGE           |   PMC3  |           0 |
+|       DRAM_CHANNEL_0      |   DFC0  |       13996 |
+|       DRAM_CHANNEL_1      |   DFC1  |       14064 |
++---------------------------+---------+-------------+
+
++-----------------------------------+-------------+
+|               Metric              | HWThread 64 |
++-----------------------------------+-------------+
+|        Runtime (RDTSC) [s]        |      0.0002 |
+|        Runtime unhalted [s]       |      0.0005 |
+|            Clock [MHz]            |   3265.3259 |
+|                CPI                |      0.4646 |
+|            DP [MFLOP/s]           |    520.3511 |
+|    Memory bandwidth [MBytes/s]    |   8898.6715 |
+|    Memory data volume [GBytes]    |      0.0018 |
+| Operational intensity [FLOP/Byte] |      0.0585 |
++-----------------------------------+-------------+
+
+INFO: You are running LIKWID in a cpuset with 1 CPUs. Taking given IDs as logical ID in cpuset
+--------------------------------------------------------------------------------
+CPU name:	AMD EPYC 7702 64-Core Processor
+CPU type:	AMD K17 (Zen2) architecture
+CPU clock:	2.00 GHz
+--------------------------------------------------------------------------------
+For correctness checking, partial results have been written to partial_results.out
+--------------------------------------------------------------------------------
+Region <init_datastructures>, Group 1: MEM_DP
++-------------------+-------------+
+|    Region Info    | HWThread 64 |
++-------------------+-------------+
+| RDTSC Runtime [s] |    2.295492 |
+|     call count    |           1 |
++-------------------+-------------+
+
++---------------------------+---------+-------------+
+|           Event           | Counter | HWThread 64 |
++---------------------------+---------+-------------+
+|      ACTUAL_CPU_CLOCK     |  FIXC1  |  7666970000 |
+|       MAX_CPU_CLOCK       |  FIXC2  |  4582622000 |
+|    RETIRED_INSTRUCTIONS   |   PMC0  | 14736130000 |
+|    CPU_CLOCKS_UNHALTED    |   PMC1  |  3117478000 |
+| RETIRED_SSE_AVX_FLOPS_ALL |   PMC2  |          12 |
+|           MERGE           |   PMC3  |           0 |
+|       DRAM_CHANNEL_0      |   DFC0  |   267865900 |
+|       DRAM_CHANNEL_1      |   DFC1  |   267872500 |
++---------------------------+---------+-------------+
+
++-----------------------------------+--------------+
+|               Metric              |  HWThread 64 |
++-----------------------------------+--------------+
+|        Runtime (RDTSC) [s]        |       2.2955 |
+|        Runtime unhalted [s]       |       3.8407 |
+|            Clock [MHz]            |    3339.8150 |
+|                CPI                |       0.2116 |
+|            DP [MFLOP/s]           | 5.227637e-06 |
+|    Memory bandwidth [MBytes/s]    |   14936.7794 |
+|    Memory data volume [GBytes]    |      34.2873 |
+| Operational intensity [FLOP/Byte] | 3.499842e-10 |
++-----------------------------------+--------------+
+
+Region <function_d>, Group 1: MEM_DP
++-------------------+-------------+
+|    Region Info    | HWThread 64 |
++-------------------+-------------+
+| RDTSC Runtime [s] |    0.000089 |
+|     call count    |           1 |
++-------------------+-------------+
+
++---------------------------+---------+-------------+
+|           Event           | Counter | HWThread 64 |
++---------------------------+---------+-------------+
+|      ACTUAL_CPU_CLOCK     |  FIXC1  |      550739 |
+|       MAX_CPU_CLOCK       |  FIXC2  |      328640 |
+|    RETIRED_INSTRUCTIONS   |   PMC0  |      489126 |
+|    CPU_CLOCKS_UNHALTED    |   PMC1  |      328770 |
+| RETIRED_SSE_AVX_FLOPS_ALL |   PMC2  |      160012 |
+|           MERGE           |   PMC3  |           0 |
+|       DRAM_CHANNEL_0      |   DFC0  |       21193 |
+|       DRAM_CHANNEL_1      |   DFC1  |       21049 |
++---------------------------+---------+-------------+
+
++-----------------------------------+-------------+
+|               Metric              | HWThread 64 |
++-----------------------------------+-------------+
+|        Runtime (RDTSC) [s]        |      0.0001 |
+|        Runtime unhalted [s]       |      0.0003 |
+|            Clock [MHz]            |   3345.3232 |
+|                CPI                |      0.6722 |
+|            DP [MFLOP/s]           |   1798.5481 |
+|    Memory bandwidth [MBytes/s]    |  30387.4277 |
+|    Memory data volume [GBytes]    |      0.0027 |
+| Operational intensity [FLOP/Byte] |      0.0592 |
++-----------------------------------+-------------+
+
+Region <function_b>, Group 1: MEM_DP
++-------------------+-------------+
+|    Region Info    | HWThread 64 |
++-------------------+-------------+
+| RDTSC Runtime [s] |    0.000198 |
+|     call count    |           1 |
++-------------------+-------------+
+
++---------------------------+---------+-------------+
+|           Event           | Counter | HWThread 64 |
++---------------------------+---------+-------------+
+|      ACTUAL_CPU_CLOCK     |  FIXC1  |      901931 |
+|       MAX_CPU_CLOCK       |  FIXC2  |      539220 |
+|    RETIRED_INSTRUCTIONS   |   PMC0  |      569379 |
+|    CPU_CLOCKS_UNHALTED    |   PMC1  |      264700 |
+| RETIRED_SSE_AVX_FLOPS_ALL |   PMC2  |      160012 |
+|           MERGE           |   PMC3  |           0 |
+|       DRAM_CHANNEL_0      |   DFC0  |       12574 |
+|       DRAM_CHANNEL_1      |   DFC1  |       12620 |
++---------------------------+---------+-------------+
+
++-----------------------------------+-------------+
+|               Metric              | HWThread 64 |
++-----------------------------------+-------------+
+|        Runtime (RDTSC) [s]        |      0.0002 |
+|        Runtime unhalted [s]       |      0.0005 |
+|            Clock [MHz]            |   3339.0275 |
+|                CPI                |      0.4649 |
+|            DP [MFLOP/s]           |    807.4371 |
+|    Memory bandwidth [MBytes/s]    |   8136.4184 |
+|    Memory data volume [GBytes]    |      0.0016 |
+| Operational intensity [FLOP/Byte] |      0.0992 |
++-----------------------------------+-------------+
+
+Region <function_a>, Group 1: MEM_DP
++-------------------+-------------+
+|    Region Info    | HWThread 64 |
++-------------------+-------------+
+| RDTSC Runtime [s] |    5.926615 |
+|     call count    |           1 |
++-------------------+-------------+
+
++---------------------------+---------+-------------+
+|           Event           | Counter | HWThread 64 |
++---------------------------+---------+-------------+
+|      ACTUAL_CPU_CLOCK     |  FIXC1  | 19788820000 |
+|       MAX_CPU_CLOCK       |  FIXC2  | 11831210000 |
+|    RETIRED_INSTRUCTIONS   |   PMC0  | 38401240000 |
+|    CPU_CLOCKS_UNHALTED    |   PMC1  | 19705540000 |
+| RETIRED_SSE_AVX_FLOPS_ALL |   PMC2  | 12800000000 |
+|           MERGE           |   PMC3  |           0 |
+|       DRAM_CHANNEL_0      |   DFC0  |   263943600 |
+|       DRAM_CHANNEL_1      |   DFC1  |   263944300 |
++---------------------------+---------+-------------+
+
++-----------------------------------+-------------+
+|               Metric              | HWThread 64 |
++-----------------------------------+-------------+
+|        Runtime (RDTSC) [s]        |      5.9266 |
+|        Runtime unhalted [s]       |      9.9130 |
+|            Clock [MHz]            |   3338.9000 |
+|                CPI                |      0.5131 |
+|            DP [MFLOP/s]           |   2159.7489 |
+|    Memory bandwidth [MBytes/s]    |   5700.5265 |
+|    Memory data volume [GBytes]    |     33.7848 |
+| Operational intensity [FLOP/Byte] |      0.3789 |
++-----------------------------------+-------------+
+
+Region <function_c>, Group 1: MEM_DP
++-------------------+-------------+
+|    Region Info    | HWThread 64 |
++-------------------+-------------+
+| RDTSC Runtime [s] |    0.000224 |
+|     call count    |           1 |
++-------------------+-------------+
+
++---------------------------+---------+-------------+
+|           Event           | Counter | HWThread 64 |
++---------------------------+---------+-------------+
+|      ACTUAL_CPU_CLOCK     |  FIXC1  |      994705 |
+|       MAX_CPU_CLOCK       |  FIXC2  |      592280 |
+|    RETIRED_INSTRUCTIONS   |   PMC0  |      729527 |
+|    CPU_CLOCKS_UNHALTED    |   PMC1  |      306417 |
+| RETIRED_SSE_AVX_FLOPS_ALL |   PMC2  |      120012 |
+|           MERGE           |   PMC3  |           0 |
+|       DRAM_CHANNEL_0      |   DFC0  |       16117 |
+|       DRAM_CHANNEL_1      |   DFC1  |       16066 |
++---------------------------+---------+-------------+
+
++-----------------------------------+-------------+
+|               Metric              | HWThread 64 |
++-----------------------------------+-------------+
+|        Runtime (RDTSC) [s]        |      0.0002 |
+|        Runtime unhalted [s]       |      0.0005 |
+|            Clock [MHz]            |   3352.5859 |
+|                CPI                |      0.4200 |
+|            DP [MFLOP/s]           |    536.3166 |
+|    Memory bandwidth [MBytes/s]    |   9204.5611 |
+|    Memory data volume [GBytes]    |      0.0021 |
+| Operational intensity [FLOP/Byte] |      0.0583 |
++-----------------------------------+-------------+
+
+INFO: You are running LIKWID in a cpuset with 1 CPUs. Taking given IDs as logical ID in cpuset
+--------------------------------------------------------------------------------
+CPU name:	AMD EPYC 7702 64-Core Processor
+CPU type:	AMD K17 (Zen2) architecture
+CPU clock:	2.00 GHz
+--------------------------------------------------------------------------------
+For correctness checking, partial results have been written to partial_results.out
+--------------------------------------------------------------------------------
+Region <init_datastructures>, Group 1: MEM_DP
++-------------------+-------------+
+|    Region Info    | HWThread 64 |
++-------------------+-------------+
+| RDTSC Runtime [s] |    4.149812 |
+|     call count    |           1 |
++-------------------+-------------+
+
++---------------------------+---------+-------------+
+|           Event           | Counter | HWThread 64 |
++---------------------------+---------+-------------+
+|      ACTUAL_CPU_CLOCK     |  FIXC1  | 13860030000 |
+|       MAX_CPU_CLOCK       |  FIXC2  |  8284102000 |
+|    RETIRED_INSTRUCTIONS   |   PMC0  | 26636250000 |
+|    CPU_CLOCKS_UNHALTED    |   PMC1  |  5640962000 |
+| RETIRED_SSE_AVX_FLOPS_ALL |   PMC2  |          12 |
+|           MERGE           |   PMC3  |           0 |
+|       DRAM_CHANNEL_0      |   DFC0  |   484219300 |
+|       DRAM_CHANNEL_1      |   DFC1  |   484232200 |
++---------------------------+---------+-------------+
+
++-----------------------------------+--------------+
+|               Metric              |  HWThread 64 |
++-----------------------------------+--------------+
+|        Runtime (RDTSC) [s]        |       4.1498 |
+|        Runtime unhalted [s]       |       6.9431 |
+|            Clock [MHz]            |    3339.8780 |
+|                CPI                |       0.2118 |
+|            DP [MFLOP/s]           | 2.891697e-06 |
+|    Memory bandwidth [MBytes/s]    |   14935.8323 |
+|    Memory data volume [GBytes]    |      61.9809 |
+| Operational intensity [FLOP/Byte] | 1.936080e-10 |
++-----------------------------------+--------------+
+
+Region <function_d>, Group 1: MEM_DP
++-------------------+-------------+
+|    Region Info    | HWThread 64 |
++-------------------+-------------+
+| RDTSC Runtime [s] |    0.000097 |
+|     call count    |           1 |
++-------------------+-------------+
+
++---------------------------+---------+-------------+
+|           Event           | Counter | HWThread 64 |
++---------------------------+---------+-------------+
+|      ACTUAL_CPU_CLOCK     |  FIXC1  |      579362 |
+|       MAX_CPU_CLOCK       |  FIXC2  |      346240 |
+|    RETIRED_INSTRUCTIONS   |   PMC0  |      549126 |
+|    CPU_CLOCKS_UNHALTED    |   PMC1  |      353975 |
+| RETIRED_SSE_AVX_FLOPS_ALL |   PMC2  |      180012 |
+|           MERGE           |   PMC3  |           0 |
+|       DRAM_CHANNEL_0      |   DFC0  |       23115 |
+|       DRAM_CHANNEL_1      |   DFC1  |       23369 |
++---------------------------+---------+-------------+
+
++-----------------------------------+-------------+
+|               Metric              | HWThread 64 |
++-----------------------------------+-------------+
+|        Runtime (RDTSC) [s]        |      0.0001 |
+|        Runtime unhalted [s]       |      0.0003 |
+|            Clock [MHz]            |   3340.2936 |
+|                CPI                |      0.6446 |
+|            DP [MFLOP/s]           |   1859.9294 |
+|    Memory bandwidth [MBytes/s]    |  30738.2022 |
+|    Memory data volume [GBytes]    |      0.0030 |
+| Operational intensity [FLOP/Byte] |      0.0605 |
++-----------------------------------+-------------+
+
+Region <function_b>, Group 1: MEM_DP
++-------------------+-------------+
+|    Region Info    | HWThread 64 |
++-------------------+-------------+
+| RDTSC Runtime [s] |    0.000232 |
+|     call count    |           1 |
++-------------------+-------------+
+
++---------------------------+---------+-------------+
+|           Event           | Counter | HWThread 64 |
++---------------------------+---------+-------------+
+|      ACTUAL_CPU_CLOCK     |  FIXC1  |     1021943 |
+|       MAX_CPU_CLOCK       |  FIXC2  |      610860 |
+|    RETIRED_INSTRUCTIONS   |   PMC0  |      639398 |
+|    CPU_CLOCKS_UNHALTED    |   PMC1  |      296152 |
+| RETIRED_SSE_AVX_FLOPS_ALL |   PMC2  |      180012 |
+|           MERGE           |   PMC3  |           0 |
+|       DRAM_CHANNEL_0      |   DFC0  |       13988 |
+|       DRAM_CHANNEL_1      |   DFC1  |       13888 |
++---------------------------+---------+-------------+
+
++-----------------------------------+-------------+
+|               Metric              | HWThread 64 |
++-----------------------------------+-------------+
+|        Runtime (RDTSC) [s]        |      0.0002 |
+|        Runtime unhalted [s]       |      0.0005 |
+|            Clock [MHz]            |   3339.6185 |
+|                CPI                |      0.4632 |
+|            DP [MFLOP/s]           |    775.8740 |
+|    Memory bandwidth [MBytes/s]    |   7689.5366 |
+|    Memory data volume [GBytes]    |      0.0018 |
+| Operational intensity [FLOP/Byte] |      0.1009 |
++-----------------------------------+-------------+
+
+Region <function_a>, Group 1: MEM_DP
++-------------------+-------------+
+|    Region Info    | HWThread 64 |
++-------------------+-------------+
+| RDTSC Runtime [s] |    7.567815 |
+|     call count    |           1 |
++-------------------+-------------+
+
++---------------------------+---------+-------------+
+|           Event           | Counter | HWThread 64 |
++---------------------------+---------+-------------+
+|      ACTUAL_CPU_CLOCK     |  FIXC1  | 25270700000 |
+|       MAX_CPU_CLOCK       |  FIXC2  | 15105800000 |
+|    RETIRED_INSTRUCTIONS   |   PMC0  | 48601750000 |
+|    CPU_CLOCKS_UNHALTED    |   PMC1  | 25181560000 |
+| RETIRED_SSE_AVX_FLOPS_ALL |   PMC2  | 16200000000 |
+|           MERGE           |   PMC3  |           0 |
+|       DRAM_CHANNEL_0      |   DFC0  |   476122000 |
+|       DRAM_CHANNEL_1      |   DFC1  |   476123900 |
++---------------------------+---------+-------------+
+
++-----------------------------------+-------------+
+|               Metric              | HWThread 64 |
++-----------------------------------+-------------+
+|        Runtime (RDTSC) [s]        |      7.5678 |
+|        Runtime unhalted [s]       |     12.6592 |
+|            Clock [MHz]            |   3339.5305 |
+|                CPI                |      0.5181 |
+|            DP [MFLOP/s]           |   2140.6443 |
+|    Memory bandwidth [MBytes/s]    |   8053.0163 |
+|    Memory data volume [GBytes]    |     60.9437 |
+| Operational intensity [FLOP/Byte] |      0.2658 |
++-----------------------------------+-------------+
+
+Region <function_c>, Group 1: MEM_DP
++-------------------+-------------+
+|    Region Info    | HWThread 64 |
++-------------------+-------------+
+| RDTSC Runtime [s] |    0.000381 |
+|     call count    |           1 |
++-------------------+-------------+
+
++---------------------------+---------+-------------+
+|           Event           | Counter | HWThread 64 |
++---------------------------+---------+-------------+
+|      ACTUAL_CPU_CLOCK     |  FIXC1  |     1525000 |
+|       MAX_CPU_CLOCK       |  FIXC2  |      911460 |
+|    RETIRED_INSTRUCTIONS   |   PMC0  |      819545 |
+|    CPU_CLOCKS_UNHALTED    |   PMC1  |      565512 |
+| RETIRED_SSE_AVX_FLOPS_ALL |   PMC2  |      135012 |
+|           MERGE           |   PMC3  |           0 |
+|       DRAM_CHANNEL_0      |   DFC0  |       18008 |
+|       DRAM_CHANNEL_1      |   DFC1  |       17939 |
++---------------------------+---------+-------------+
+
++-----------------------------------+-------------+
+|               Metric              | HWThread 64 |
++-----------------------------------+-------------+
+|        Runtime (RDTSC) [s]        |      0.0004 |
+|        Runtime unhalted [s]       |      0.0008 |
+|            Clock [MHz]            |   3339.9818 |
+|                CPI                |      0.6900 |
+|            DP [MFLOP/s]           |    354.7488 |
+|    Memory bandwidth [MBytes/s]    |   6044.9288 |
+|    Memory data volume [GBytes]    |      0.0023 |
+| Operational intensity [FLOP/Byte] |      0.0587 |
++-----------------------------------+-------------+
+
+INFO: You are running LIKWID in a cpuset with 1 CPUs. Taking given IDs as logical ID in cpuset
+--------------------------------------------------------------------------------
+CPU name:	AMD EPYC 7702 64-Core Processor
+CPU type:	AMD K17 (Zen2) architecture
+CPU clock:	2.00 GHz
+--------------------------------------------------------------------------------
+For correctness checking, partial results have been written to partial_results.out
+--------------------------------------------------------------------------------
+Region <init_datastructures>, Group 1: MEM_DP
++-------------------+-------------+
+|    Region Info    | HWThread 64 |
++-------------------+-------------+
+| RDTSC Runtime [s] |    1.538153 |
+|     call count    |           1 |
++-------------------+-------------+
+
++---------------------------+---------+-------------+
+|           Event           | Counter | HWThread 64 |
++---------------------------+---------+-------------+
+|      ACTUAL_CPU_CLOCK     |  FIXC1  |  5136891000 |
+|       MAX_CPU_CLOCK       |  FIXC2  |  3070785000 |
+|    RETIRED_INSTRUCTIONS   |   PMC0  |  9871576000 |
+|    CPU_CLOCKS_UNHALTED    |   PMC1  |  2087841000 |
+| RETIRED_SSE_AVX_FLOPS_ALL |   PMC2  |          12 |
+|           MERGE           |   PMC3  |           0 |
+|       DRAM_CHANNEL_0      |   DFC0  |   179406900 |
+|       DRAM_CHANNEL_1      |   DFC1  |   179408200 |
++---------------------------+---------+-------------+
+
++-----------------------------------+--------------+
+|               Metric              |  HWThread 64 |
++-----------------------------------+--------------+
+|        Runtime (RDTSC) [s]        |       1.5382 |
+|        Runtime unhalted [s]       |       2.5733 |
+|            Clock [MHz]            |    3339.3351 |
+|                CPI                |       0.2115 |
+|            DP [MFLOP/s]           | 7.801565e-06 |
+|    Memory bandwidth [MBytes/s]    |   14929.7023 |
+|    Memory data volume [GBytes]    |      22.9642 |
+| Operational intensity [FLOP/Byte] | 5.225533e-10 |
++-----------------------------------+--------------+
+
+Region <function_d>, Group 1: MEM_DP
++-------------------+-------------+
+|    Region Info    | HWThread 64 |
++-------------------+-------------+
+| RDTSC Runtime [s] |    0.000132 |
+|     call count    |           1 |
++-------------------+-------------+
+
++---------------------------+---------+-------------+
+|           Event           | Counter | HWThread 64 |
++---------------------------+---------+-------------+
+|      ACTUAL_CPU_CLOCK     |  FIXC1  |      697009 |
+|       MAX_CPU_CLOCK       |  FIXC2  |      418680 |
+|    RETIRED_INSTRUCTIONS   |   PMC0  |      609127 |
+|    CPU_CLOCKS_UNHALTED    |   PMC1  |      446046 |
+| RETIRED_SSE_AVX_FLOPS_ALL |   PMC2  |      200012 |
+|           MERGE           |   PMC3  |           0 |
+|       DRAM_CHANNEL_0      |   DFC0  |       26297 |
+|       DRAM_CHANNEL_1      |   DFC1  |       26308 |
++---------------------------+---------+-------------+
+
++-----------------------------------+-------------+
+|               Metric              | HWThread 64 |
++-----------------------------------+-------------+
+|        Runtime (RDTSC) [s]        |      0.0001 |
+|        Runtime unhalted [s]       |      0.0003 |
+|            Clock [MHz]            |   3323.2670 |
+|                CPI                |      0.7323 |
+|            DP [MFLOP/s]           |   1512.1574 |
+|    Memory bandwidth [MBytes/s]    |  25453.5255 |
+|    Memory data volume [GBytes]    |      0.0034 |
+| Operational intensity [FLOP/Byte] |      0.0594 |
++-----------------------------------+-------------+
+
+Region <function_b>, Group 1: MEM_DP
++-------------------+-------------+
+|    Region Info    | HWThread 64 |
++-------------------+-------------+
+| RDTSC Runtime [s] |    0.000265 |
+|     call count    |           1 |
++-------------------+-------------+
+
++---------------------------+---------+-------------+
+|           Event           | Counter | HWThread 64 |
++---------------------------+---------+-------------+
+|      ACTUAL_CPU_CLOCK     |  FIXC1  |     1126291 |
+|       MAX_CPU_CLOCK       |  FIXC2  |      672740 |
+|    RETIRED_INSTRUCTIONS   |   PMC0  |      709418 |
+|    CPU_CLOCKS_UNHALTED    |   PMC1  |      323750 |
+| RETIRED_SSE_AVX_FLOPS_ALL |   PMC2  |      200012 |
+|           MERGE           |   PMC3  |           0 |
+|       DRAM_CHANNEL_0      |   DFC0  |       14496 |
+|       DRAM_CHANNEL_1      |   DFC1  |       14501 |
++---------------------------+---------+-------------+
+
++-----------------------------------+-------------+
+|               Metric              | HWThread 64 |
++-----------------------------------+-------------+
+|        Runtime (RDTSC) [s]        |      0.0003 |
+|        Runtime unhalted [s]       |      0.0006 |
+|            Clock [MHz]            |   3342.0460 |
+|                CPI                |      0.4564 |
+|            DP [MFLOP/s]           |    753.7380 |
+|    Memory bandwidth [MBytes/s]    |   6993.5458 |
+|    Memory data volume [GBytes]    |      0.0019 |
+| Operational intensity [FLOP/Byte] |      0.1078 |
++-----------------------------------+-------------+
+
+Region <function_a>, Group 1: MEM_DP
++-------------------+-------------+
+|    Region Info    | HWThread 64 |
++-------------------+-------------+
+| RDTSC Runtime [s] |    9.174968 |
+|     call count    |           1 |
++-------------------+-------------+
+
++---------------------------+---------+-------------+
+|           Event           | Counter | HWThread 64 |
++---------------------------+---------+-------------+
+|      ACTUAL_CPU_CLOCK     |  FIXC1  | 30619890000 |
+|       MAX_CPU_CLOCK       |  FIXC2  | 18314340000 |
+|    RETIRED_INSTRUCTIONS   |   PMC0  | 60001550000 |
+|    CPU_CLOCKS_UNHALTED    |   PMC1  | 30512440000 |
+| RETIRED_SSE_AVX_FLOPS_ALL |   PMC2  | 20000000000 |
+|           MERGE           |   PMC3  |           0 |
+|       DRAM_CHANNEL_0      |   DFC0  |   265445100 |
+|       DRAM_CHANNEL_1      |   DFC1  |   265446700 |
++---------------------------+---------+-------------+
+
++-----------------------------------+-------------+
+|               Metric              | HWThread 64 |
++-----------------------------------+-------------+
+|        Runtime (RDTSC) [s]        |      9.1750 |
+|        Runtime unhalted [s]       |     15.3389 |
+|            Clock [MHz]            |   3337.5011 |
+|                CPI                |      0.5085 |
+|            DP [MFLOP/s]           |   2179.8441 |
+|    Memory bandwidth [MBytes/s]    |   3703.2364 |
+|    Memory data volume [GBytes]    |     33.9771 |
+| Operational intensity [FLOP/Byte] |      0.5886 |
++-----------------------------------+-------------+
+
+Region <function_c>, Group 1: MEM_DP
++-------------------+-------------+
+|    Region Info    | HWThread 64 |
++-------------------+-------------+
+| RDTSC Runtime [s] |    0.000431 |
+|     call count    |           1 |
++-------------------+-------------+
+
++---------------------------+---------+-------------+
+|           Event           | Counter | HWThread 64 |
++---------------------------+---------+-------------+
+|      ACTUAL_CPU_CLOCK     |  FIXC1  |     1699755 |
+|       MAX_CPU_CLOCK       |  FIXC2  |     1015600 |
+|    RETIRED_INSTRUCTIONS   |   PMC0  |      909565 |
+|    CPU_CLOCKS_UNHALTED    |   PMC1  |      616198 |
+| RETIRED_SSE_AVX_FLOPS_ALL |   PMC2  |      150012 |
+|           MERGE           |   PMC3  |           0 |
+|       DRAM_CHANNEL_0      |   DFC0  |       20125 |
+|       DRAM_CHANNEL_1      |   DFC1  |       19992 |
++---------------------------+---------+-------------+
+
++-----------------------------------+-------------+
+|               Metric              | HWThread 64 |
++-----------------------------------+-------------+
+|        Runtime (RDTSC) [s]        |      0.0004 |
+|        Runtime unhalted [s]       |      0.0009 |
+|            Clock [MHz]            |   3340.9709 |
+|                CPI                |      0.6775 |
+|            DP [MFLOP/s]           |    348.1185 |
+|    Memory bandwidth [MBytes/s]    |   5958.1242 |
+|    Memory data volume [GBytes]    |      0.0026 |
+| Operational intensity [FLOP/Byte] |      0.0584 |
++-----------------------------------+-------------+
+
