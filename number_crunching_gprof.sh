@@ -1,9 +1,9 @@
 #!/bin/bash
-#SBATCH -p test
+#SBATCH -p shared
 #SBATCH --mem=1G
 #SBATCH -N 1
 #SBATCH --ntasks-per-node=1
-#SBATCH --cpus-per-task=8
+#SBATCH -c 1
 #SBATCH --time=00:35:00
 
 ./number_crunching 10000
