@@ -19,7 +19,6 @@ double *function_a(const double *A, const double *x, const int N) {
   // }
   #pragma omp target teams distribute parallel for map(to:A[:N*N], x[:N]) map(from:y[:N])
   for (unsigned int i = 0; i < N; i++) {
-      #pragma omp parallel for
       for (unsigned int j = 0; j < N; j++) {
           double temp = A[i * N + j] * x[i];
           #pragma omp atomic
