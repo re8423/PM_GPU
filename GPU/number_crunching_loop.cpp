@@ -2,6 +2,7 @@
 #include <fstream>
 #include <iostream>
 #include <iomanip>
+#include <omp.h> //openmp header file
 
 
 double *function_a(const double *A, const double *x, const int N) {
@@ -18,7 +19,7 @@ double *function_a(const double *A, const double *x, const int N) {
 }
 // vector addition
 
-// #pragma omp target teams distribute parallel for map(to:u[0:N], v[0:N]) map(tofrom:x[0:N])
+#pragma omp target teams distribute parallel for map(to:u[0:N], v[0:N]) map(tofrom:x[0:N])
 double *function_b(const double a, const double *u, const double *v, const int N) {
   double *x = new double[N];
   for (unsigned int i = 0; i < N; i++) {
@@ -40,7 +41,7 @@ double *function_c(const double s, const double *x, const double *y,
   }
   return z;
 }
-
+#pragma omp target teams distribute parallel for reduction(+:s)
 double function_d(const double *u, const double *v, const int N) {
   double s = 0;
   for (unsigned int i = 0; i < N; i++) {
