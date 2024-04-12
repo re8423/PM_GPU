@@ -3,7 +3,6 @@
 #include <iostream>
 #include <iomanip>
 #include <omp.h> //openmp header file
-#include <cuda_runtime.h>
 
 
 double *function_a(const double *A, const double *x, const int N) {
@@ -12,7 +11,7 @@ double *function_a(const double *A, const double *x, const int N) {
   for (unsigned int i = 0; i < N; i++) {
     y[i] = 0;
   }
-  #pragma omp target teams distribute parallel for map(to:A[:N*N], x[:N]) map(from:y[:N]) reduction(+:y[:N])
+  // #pragma omp target teams distribute parallel for map(to:A[:N*N], x[:N]) map(from:y[:N]) reduction(+:y[:N])
   for (unsigned int i = 0; i < N; i++) {
     for (unsigned int j = 0; j < N; j++) {
       y[i] += A[i * N + j] * x[i];
@@ -103,7 +102,7 @@ void print_results_to_file(const double s, const double *x, const double *y,
 
 int main(int argc, char **argv) {
   long long N;
-  cudaSetDevice(0);
+
   if (argc == 2) {
     N = std::stoi(argv[1]);
   } else {
