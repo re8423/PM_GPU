@@ -45,7 +45,7 @@ double *function_c(const double s, const double *x, const double *y,
 
 double function_d(const double *u, const double *v, const int N) {
   double s = 0;
-  #pragma omp target teams distribute parallel for 
+  #pragma omp target teams distribute parallel for reduction(+:s)
   for (unsigned int i = 0; i < N; i++) {
     s += u[i] * v[i];
   }
