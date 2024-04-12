@@ -11,7 +11,7 @@ double *function_a(const double *A, const double *x, const int N) {
   for (unsigned int i = 0; i < N; i++) {
     y[i] = 0;
   }
-  #pragma omp target teams distribute parallel for map(to:A[:N*N], x[:N]) map(from:y[:N]) 
+  #pragma omp target teams distribute parallel for map(to:A[:N*N], x[:N]) map(tofrom:y[:N]) 
   for (unsigned int i = 0; i < N; i++) {
     for (unsigned int j = 0; j < N; j++) {
       y[i] += A[i * N + j] * x[i];
@@ -22,7 +22,8 @@ double *function_a(const double *A, const double *x, const int N) {
 
 double *function_b(const double a, const double *u, const double *v, const int N) {
   double *x = new double[N];
-  #pragma omp target teams distribute parallel for map(to:u[0:N], v[0:N]) map(tofrom:x[0:N])
+  // instead of tofrom, shouldnt from be better?
+  #pragma omp target teams distribute parallel for map(to:u[0:N], v[0:N]) map(from:x[0:N])
   for (unsigned int i = 0; i < N; i++) {
     x[i] = a * u[i] + v[i];
   }
