@@ -14,7 +14,7 @@ double *function_a(const double *A, const double *x, const int N) {
   #pragma omp target teams distribute parallel for map(to:A[:N*N], x[:N]) map(from:y[:N]) 
   for (unsigned int i = 0; i < N; i++) {
     for (unsigned int j = 0; j < N; j++) {
-      y[i] += A[i * N + j] * x[i]+0.5;
+      y[i] += A[i * N + j] * x[i];
     }
   }
   // #pragma omp target teams distribute parallel for map(to:A[:N*N], x[:N]) map(from:y[:N])
