@@ -17,14 +17,6 @@ double *function_a(const double *A, const double *x, const int N) {
       y[i] += A[i * N + j] * x[i];
     }
   }
-  // #pragma omp target teams distribute parallel for map(to:A[:N*N], x[:N]) map(from:y[:N])
-  // for (unsigned int i = 0; i < N; i++) {
-  //     for (unsigned int j = 0; j < N; j++) {
-  //         double temp = A[i * N + j] * x[i];
-  //         #pragma omp atomic
-  //         y[i] += temp;
-  //     }
-  // }
   return y;
 }
 
@@ -53,7 +45,7 @@ double *function_c(const double s, const double *x, const double *y,
 
 double function_d(const double *u, const double *v, const int N) {
   double s = 0;
-  #pragma omp target teams distribute parallel for reduction(+:s)
+  #pragma omp target teams distribute parallel for 
   for (unsigned int i = 0; i < N; i++) {
     s += u[i] * v[i];
   }
