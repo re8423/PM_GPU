@@ -21,8 +21,8 @@ double *function_a(const double *A, const double *x, const int N) {
 
 
 double *function_b(const double a, const double *u, const double *v, const int N) {
-  #pragma omp target teams distribute parallel for map(to:u[0:N], v[0:N]) map(tofrom:x[0:N])
   double *x = new double[N];
+  #pragma omp target teams distribute parallel for map(to:u[0:N], v[0:N]) map(tofrom:x[0:N])
   for (unsigned int i = 0; i < N; i++) {
     x[i] = a * u[i] + v[i];
   }
@@ -44,8 +44,8 @@ double *function_c(const double s, const double *x, const double *y,
 }
 
 double function_d(const double *u, const double *v, const int N) {
-  #pragma omp target teams distribute parallel for reduction(+:s)
   double s = 0;
+  #pragma omp target teams distribute parallel for reduction(+:s)
   for (unsigned int i = 0; i < N; i++) {
     s += u[i] * v[i];
   }
