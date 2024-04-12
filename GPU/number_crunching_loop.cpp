@@ -11,11 +11,20 @@ double *function_a(const double *A, const double *x, const int N) {
   for (unsigned int i = 0; i < N; i++) {
     y[i] = 0;
   }
-  #pragma omp target teams distribute parallel for map(to:A[:N*N], x[:N]) reduction(+:y[:N]) map(from:y[:N]) 
+  // #pragma omp target teams distribute parallel for map(to:A[:N*N], x[:N]) map(from:y[:N]) 
+  // for (unsigned int i = 0; i < N; i++) {
+  //   for (unsigned int j = 0; j < N; j++) {
+  //     y[i] += A[i * N + j] * x[i];
+  //   }
+  // }
+  #pragma omp target teams distribute parallel for map(to:A[:N*N], x[:N]) map(from:y[:N])
   for (unsigned int i = 0; i < N; i++) {
-    for (unsigned int j = 0; j < N; j++) {
-      y[i] += A[i * N + j] * x[i];
-    }
+      double local_sum = 0.0; // Local sum for each thread
+      #pragma omp parallel for reduction(+:local_sum)
+      for (unsigned int j = 0; j < N; j++) {
+          local_sum += A[i * N + j] * x[i];
+      }
+      y[i] = local_sum; // Assign the local sum to y[i]
   }
   return y;
 }
