@@ -1,8 +1,8 @@
-CXX = g++
-CXXFLAGS = -O3 -march=native -pg -g
+CXX = nvc++
+CXXFLAGS = -fopenmp -mp=gpu -fopenmp-targets=nvptx-none
 
-number_crunching: number_crunching.cpp
-	     $(CXX) $(CXXFLAGS) -o number_crunching number_crunching.cpp
+number_crunching_loop: number_crunching_loop.cpp
+	     $(CXX) $(CXXFLAGS) -o number_crunching_loop number_crunching_loop.cpp
 
 clean:
-	rm number_crunching
+	rm number_crunching_loop
