@@ -7,6 +7,7 @@
 
 double *function_a(const double *A, const double *x, const int N) {
   double *y = new double[N];
+  #pragma omp target teams distribute parallel for
   for (unsigned int i = 0; i < N; i++) {
     y[i] = 0;
   }
@@ -17,8 +18,6 @@ double *function_a(const double *A, const double *x, const int N) {
   }
   return y;
 }
-// vector addition
-
 
 double *function_b(const double a, const double *u, const double *v, const int N) {
   double *x = new double[N];
