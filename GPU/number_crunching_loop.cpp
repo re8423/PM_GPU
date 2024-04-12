@@ -11,20 +11,20 @@ double *function_a(const double *A, const double *x, const int N) {
   for (unsigned int i = 0; i < N; i++) {
     y[i] = 0;
   }
-  // #pragma omp target teams distribute parallel for map(to:A[:N*N], x[:N]) map(from:y[:N]) 
-  // for (unsigned int i = 0; i < N; i++) {
-  //   for (unsigned int j = 0; j < N; j++) {
-  //     y[i] += A[i * N + j] * x[i];
-  //   }
-  // }
-  #pragma omp target teams distribute parallel for map(to:A[:N*N], x[:N]) map(from:y[:N])
+  #pragma omp target teams distribute parallel for map(to:A[:N*N], x[:N]) map(from:y[:N]) 
   for (unsigned int i = 0; i < N; i++) {
-      for (unsigned int j = 0; j < N; j++) {
-          double temp = A[i * N + j] * x[i];
-          #pragma omp atomic
-          y[i] += temp;
-      }
+    for (unsigned int j = 0; j < N; j++) {
+      y[i] += A[i * N + j] * x[i];
+    }
   }
+  // #pragma omp target teams distribute parallel for map(to:A[:N*N], x[:N]) map(from:y[:N])
+  // for (unsigned int i = 0; i < N; i++) {
+  //     for (unsigned int j = 0; j < N; j++) {
+  //         double temp = A[i * N + j] * x[i];
+  //         #pragma omp atomic
+  //         y[i] += temp;
+  //     }
+  // }
   return y;
 }
 
