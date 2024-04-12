@@ -1,7 +1,7 @@
 CXX = nvc++
-CXXFLAGS = -fopenmp -mp=loopgpu 
+CXXFLAGS = -fopenmp -mp=gpu 
 
-number_crunching_loop: number_crunching_loop.cpp
+loopgpu: number_crunching_loop.cpp
 	     $(CXX) $(CXXFLAGS) -o number_crunching_loop number_crunching_loop.cpp
 
 clean:
