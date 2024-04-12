@@ -3,6 +3,7 @@
 #include <iostream>
 #include <iomanip>
 #include <omp.h> //openmp header file
+#include <cuda_runtime.h>
 
 
 double *function_a(const double *A, const double *x, const int N) {
@@ -102,7 +103,7 @@ void print_results_to_file(const double s, const double *x, const double *y,
 
 int main(int argc, char **argv) {
   long long N;
-
+  cudaSetDevice(0);
   if (argc == 2) {
     N = std::stoi(argv[1]);
   } else {
