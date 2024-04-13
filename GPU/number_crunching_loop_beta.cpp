@@ -127,11 +127,13 @@ int main(int argc, char **argv) {
 
     double *y = function_a(A, x, N);
     double *z = function_c(s, x, y, N);
+
+    std::ofstream File("beta_results.out");
+    print_results_to_file(s, x, y, z, A, N, File);
   }
 
 
-  std::ofstream File("beta_results.out");
-  print_results_to_file(s, x, y, z, A, N, File);
+  
 
   std::cout << "For correctness checking, partial results have been written to "
                "beta_results.out"
