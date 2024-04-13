@@ -6,7 +6,7 @@
 
 
 void function_a(double *y, const double *A, const double *x, const int N) {
-  #pragma omp target teams distribute parallel for
+  #pragma omp target teams distribute parallel for map(tofrom:y[0:N]) 
   for (unsigned int i = 0; i < N; i++) {
     y[i] = 0;
   }
@@ -31,25 +31,15 @@ void function_b(double *x, const double a, const double *u, const double *v, con
 
 void function_c(double *z, const double s, const double *x, const double *y,
                    const int N) {
-  
-  // #pragma omp target teams distribute parallel for map(to:s, x[0:N], y[0:N]) map(from:z[0:N]) 
-  // for (unsigned int i = 0; i < N; i++) {
-  //   if (i % 2 == 0) {
-  //     z[i] = s * x[i] + y[i];
-  //   } else {
-  //     z[i] = x[i] + y[i];
-  //   }
-  // }
+
   #pragma omp target teams distribute parallel for map(to:s, x[0:N], y[0:N]) map(from:z[0:N]) 
-  for (unsigned int i = 0; i < N; i=i+2) {
+  for (unsigned int i = 0; i < N; i++) {
+    if (i % 2 == 0) {
       z[i] = s * x[i] + y[i];
-  }
-
-  #pragma omp target teams distribute parallel for map(to:s, x[0:N], y[0:N]) map(from:z[0:N]) 
-  for (unsigned int i = 1; i < N; i=i+2) {
+    } else {
       z[i] = x[i] + y[i];
+    }
   }
-
 }
 
 double function_d(double s, const double *u, const double *v, const int N) {
