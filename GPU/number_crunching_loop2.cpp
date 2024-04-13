@@ -50,7 +50,7 @@ void function_c(double *z, const double s, const double *x, const double *y,
             << std::endl;
 }
 
-void function_d(double *s, const double *u, const double *v, const int N) {
+double function_d(double s, const double *u, const double *v, const int N) {
   s = 0;
   #pragma omp target teams distribute reduction(+:s) map(to:u[0:N], v[0:N]) map(tofrom: s)
   for (unsigned int i = 0; i < N; i++) {
@@ -58,6 +58,7 @@ void function_d(double *s, const double *u, const double *v, const int N) {
   }
   std::cout << "D FINISHED "
             << std::endl;
+  return s;
 }
 
 void init_datastructures(double *u, double *v, double *A, const int N) {
@@ -127,7 +128,7 @@ int main(int argc, char **argv) {
   double *v = new double[N];
   double *A = new double[N * N];
 
-  double *s;
+  double s;
   double *x = new double[N];
   double *y = new double[N];
   double *z = new double[N];
@@ -140,7 +141,7 @@ int main(int argc, char **argv) {
   {
     #pragma omp task depend(in:u, v) depend(out:s)
     {
-        function_d(s, u, v, N);
+      s = function_d(s, u, v, N);
         // Task B
         // This task depends on the completion of Task A and produces data stored in 'b'
     }
