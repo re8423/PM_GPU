@@ -11,7 +11,7 @@ void function_a(double *y, const double *A, const double *x, const int N) {
     y[i] = 0;
   }
 
-  #pragma omp target teams distribute parallel for reduction(+:y[0:N]) map(to:A[0:N*N], x[0:N]) map(tofrom:y[0:N]) 
+  #pragma omp target teams distribute parallel for collapse(2) reduction(+:y[0:N]) map(to:A[0:N*N], x[0:N]) map(tofrom:y[0:N]) 
   for (unsigned int i = 0; i < N; i++) {
     for (unsigned int j = 0; j < N; j++) {
       y[i] += A[i * N + j] * x[i];
