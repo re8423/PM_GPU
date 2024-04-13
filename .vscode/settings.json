@@ -1,6 +1,9 @@
 {
     "files.associations": {
         "functional": "cpp",
-        "new": "cpp"
+        "new": "cpp",
+        "__locale": "cpp",
+        "ios": "cpp",
+        "random": "cpp"
     }
 }
