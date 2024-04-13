@@ -44,7 +44,7 @@ double *function_c(double *z, const double s, const double *x, const double *y,
   return z;
 }
 
-double function_d(double *s, const double *u, const double *v, const int N) {
+double function_d(double s, const double *u, const double *v, const int N) {
   
   #pragma omp target teams distribute parallel for reduction(+:s) map(to:u[0:N], v[0:N]) map(tofrom: s)
   for (unsigned int i = 0; i < N; i++) {
@@ -131,16 +131,16 @@ int main(int argc, char **argv) {
   {init_datastructures(u, v, A, N);}
 
   #pragma omp task depend(in: u, v)
-  {double s = function_d(s, u, v, N);}
+  {s = function_d(s, u, v, N);}
 
   #pragma omp task depend(in: u, v)
-  {double *x = function_b(x, 2, u, v, N);}
+  {*x = function_b(x, 2, u, v, N);}
 
   #pragma omp task depend(out: y)
-  {double *y = function_a(y, A, x, N);}
+  {*y = function_a(y, A, x, N);}
 
   #pragma omp task depend(out: z)
-  {double *z = function_c(z, s, x, y, N);}
+  {*z = function_c(z, s, x, y, N);}
   }
 
   
