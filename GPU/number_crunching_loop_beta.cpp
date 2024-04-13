@@ -120,7 +120,8 @@ int main(int argc, char **argv) {
 
   init_datastructures(u, v, A, N);
 
-  #pragma omp parallel{
+  #pragma omp parallel
+  {
     double s = function_d(u, v, N);
     double *x = function_b(2, u, v, N);
 
