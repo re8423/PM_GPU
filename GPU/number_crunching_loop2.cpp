@@ -5,7 +5,7 @@
 #include <omp.h> //openmp header file
 
 
-double *function_a(const double *y, const double *A, const double *x, const int N) {
+double *function_a(double *y, const double *A, const double *x, const int N) {
   
   #pragma omp target teams distribute parallel for
   for (unsigned int i = 0; i < N; i++) {
@@ -20,7 +20,7 @@ double *function_a(const double *y, const double *A, const double *x, const int 
   return y;
 }
 
-double *function_b(const double *x, const double a, const double *u, const double *v, const int N) {
+double *function_b(double *x, const double a, const double *u, const double *v, const int N) {
   
   // instead of tofrom, shouldnt from be better?
   #pragma omp target teams distribute parallel for map(to:a, u[0:N], v[0:N]) map(tofrom:x[0:N])
@@ -30,7 +30,7 @@ double *function_b(const double *x, const double a, const double *u, const doubl
   return x;
 }
 
-double *function_c(const double *z, const double s, const double *x, const double *y,
+double *function_c(double *z, const double s, const double *x, const double *y,
                    const int N) {
   
   #pragma omp target teams distribute parallel for map(to:s, x[0:N], y[0:N]) map(tofrom:z[0:N]) 
@@ -44,7 +44,7 @@ double *function_c(const double *z, const double s, const double *x, const doubl
   return z;
 }
 
-double function_d(const double s, const double *u, const double *v, const int N) {
+double function_d(double s, const double *u, const double *v, const int N) {
   
   #pragma omp target teams distribute parallel for reduction(+:s) map(to:u[0:N], v[0:N]) map(tofrom: s)
   for (unsigned int i = 0; i < N; i++) {
