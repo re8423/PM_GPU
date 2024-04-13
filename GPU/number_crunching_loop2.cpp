@@ -8,19 +8,17 @@
 void function_a(double *y, const double *A, const double *x, const int N) {
   std::cout << "A STARTED "
             << std::endl;
-  #pragma omp target teams distribute
+  #pragma omp target teams distribute parallel for
   for (unsigned int i = 0; i < N; i++) {
     y[i] = 0;
   }
   std::cout << "FIRST LOOP FINISHED "
             << std::endl;
-  #pragma omp target teams distribute reduction(+:y[0:N]) map(to:A[0:N*N], x[0:N]) map(tofrom:y[0:N]) 
+  #pragma omp target teams distribute parallel for reduction(+:y[0:N]) map(to:A[0:N*N], x[0:N]) map(tofrom:y[0:N]) 
   for (unsigned int i = 0; i < N; i++) {
     for (unsigned int j = 0; j < N; j++) {
       y[i] += A[i * N + j] * x[i];
     }
-    std::cout << i
-            << std::endl;
   }
   std::cout << "A FINISHED "
             << std::endl;
@@ -40,7 +38,7 @@ void function_b(double *x, const double a, const double *u, const double *v, con
 void function_c(double *z, const double s, const double *x, const double *y,
                    const int N) {
   
-  #pragma omp target teams distribute map(to:s, x[0:N], y[0:N]) map(tofrom:z[0:N]) 
+  #pragma omp target teams distribute parallel for map(to:s, x[0:N], y[0:N]) map(tofrom:z[0:N]) 
   for (unsigned int i = 0; i < N; i++) {
     if (i % 2 == 0) {
       z[i] = s * x[i] + y[i];
@@ -134,16 +132,12 @@ int main(int argc, char **argv) {
   double *y = new double[N];
   double *z = new double[N];
 
+  init_datastructures(u, v, A, N);
+
 // d and b can be ran concurrently
   #pragma omp parallel
 	#pragma omp single
   {
-    
-    #pragma omp task depend(out:u, v, A)
-    {
-        init_datastructures(u, v, A, N);
-    }
-
     #pragma omp task depend(in:u, v) depend(out:s)
     {
         function_d(s, u, v, N);
@@ -157,22 +151,10 @@ int main(int argc, char **argv) {
         // Task B
         // This task depends on the completion of Task A and produces data stored in 'b'
     }
-
-    #pragma omp task depend(in:x) depend(out:y)
-    {
-      function_a(y, A, x, N);
-        // Task B
-        // This task depends on the completion of Task A and produces data stored in 'b'
-    }
-
-    #pragma omp task depend(in:y) depend(out:z)
-    {
-      function_c(z, s, x, y, N);
-        // Task B
-        // This task depends on the completion of Task A and produces data stored in 'b'
-    }
-
   }
+
+  function_a(y, A, x, N);
+  function_c(z, s, x, y, N);
   
   std::ofstream File("partial_results.out");
   print_results_to_file(s, x, y, z, A, N, File);
