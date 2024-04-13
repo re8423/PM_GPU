@@ -119,8 +119,6 @@ int main(int argc, char **argv) {
   double *y = new double[N];
   double *z = new double[N];
 
-  std::ofstream File("partial_results.out");
-
 // d and b can be ran concurrently
   #pragma omp parallel
 	#pragma omp single
@@ -159,17 +157,10 @@ int main(int argc, char **argv) {
         // This task depends on the completion of Task A and produces data stored in 'b'
     }
 
-    #pragma omp task depend(in: s, x, y, z, A) 
-    {
-      print_results_to_file(s, x, y, z, A, N, File);
-    }
-
   }
   
-
-
-  
-  
+  std::ofstream File("partial_results.out");
+  print_results_to_file(s, x, y, z, A, N, File);
 
   std::cout << "For correctness checking, partial results have been written to "
                "partial_results.out"
