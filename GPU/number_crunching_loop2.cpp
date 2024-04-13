@@ -143,14 +143,14 @@ int main(int argc, char **argv) {
         // This task depends on the completion of Task A and produces data stored in 'b'
     }
 
-    #pragma omp task depend(in:A, x) depend(out:y)
+    #pragma omp task depend(in:x) depend(out:y)
     {
       function_a(y, A, x, N);
         // Task B
         // This task depends on the completion of Task A and produces data stored in 'b'
     }
 
-    #pragma omp task depend(in:s, x, y) depend(out:z)
+    #pragma omp task depend(in:y) depend(out:z)
     {
       function_c(z, s, x, y, N);
         // Task B
