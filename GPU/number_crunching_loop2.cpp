@@ -120,7 +120,7 @@ int main(int argc, char **argv) {
 
   init_datastructures(u, v, A, N);
   double s;
-  double *x;
+  double x;
   #pragma omp parallel
   #pragma omp single
   {
