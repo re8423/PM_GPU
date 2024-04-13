@@ -21,7 +21,7 @@ double *function_a(const double *A, const double *x, const int N) {
 }
 
 double function_b(const double a, const double *u, const double *v, const int N) {
-  double *x = new double[N];
+  double x = new double[N];
   // instead of tofrom, shouldnt from be better?
   #pragma omp target teams distribute map(to:a, u[0:N], v[0:N]) map(tofrom:x[0:N])
   for (unsigned int i = 0; i < N; i++) {
