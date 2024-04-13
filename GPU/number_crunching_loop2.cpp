@@ -5,8 +5,8 @@
 #include <omp.h> //openmp header file
 
 
-double *function_a(const double *A, const double *x, const int N) {
-  double *y = new double[N];
+void function_a(double *y, const double *A, const double *x, const int N) {
+  
   #pragma omp target teams distribute
   for (unsigned int i = 0; i < N; i++) {
     y[i] = 0;
@@ -17,22 +17,20 @@ double *function_a(const double *A, const double *x, const int N) {
       y[i] += A[i * N + j] * x[i];
     }
   }
-  return y;
 }
 
-double *function_b(const double a, const double *u, const double *v, const int N) {
-  double *x = new double[N];
+void function_b(double *x, const double a, const double *u, const double *v, const int N) {
+  
   // instead of tofrom, shouldnt from be better?
   #pragma omp target teams distribute map(to:a, u[0:N], v[0:N]) map(tofrom:x[0:N])
   for (unsigned int i = 0; i < N; i++) {
     x[i] = a * u[i] + v[i];
   }
-  return x;
 }
 
-double *function_c(const double s, const double *x, const double *y,
+void function_c(double *z, const double s, const double *x, const double *y,
                    const int N) {
-  double *z = new double[N];
+  
   #pragma omp target teams distribute map(to:s, x[0:N], y[0:N]) map(tofrom:z[0:N]) 
   for (unsigned int i = 0; i < N; i++) {
     if (i % 2 == 0) {
@@ -41,16 +39,14 @@ double *function_c(const double s, const double *x, const double *y,
       z[i] = x[i] + y[i];
     }
   }
-  return z;
 }
 
-double function_d(const double *u, const double *v, const int N) {
-  double s = 0;
+void function_d(double s, const double *u, const double *v, const int N) {
+  s = 0;
   #pragma omp target teams distribute reduction(+:s) map(to:u[0:N], v[0:N]) map(tofrom: s)
   for (unsigned int i = 0; i < N; i++) {
     s += u[i] * v[i];
   }
-  return s;
 }
 
 void init_datastructures(double *u, double *v, double *A, const int N) {
@@ -118,29 +114,62 @@ int main(int argc, char **argv) {
   double *v = new double[N];
   double *A = new double[N * N];
 
-  init_datastructures(u, v, A, N);
   double s;
-  double x;
-  #pragma omp parallel
-  #pragma omp single
-  {
-    #pragma omp task depend(in: u, v) //d
-		{ 
-			double s = function_d(u, v, N);
-		}
-		#pragma omp task depend(in: u, v) //b
-		{ 
-			double x = function_b(2, u, v, N);
-		}
-  }
-  #pragma omp taskwait 
-// d and b can be ran concurrently
-
-  double *y = function_a(A, x, N);
-  double *z = function_c(s, x, y, N);
+  double *x = new double[N];
+  double *y = new double[N];
+  double *z = new double[N];
 
   std::ofstream File("partial_results.out");
-  print_results_to_file(s, x, y, z, A, N, File);
+
+// d and b can be ran concurrently
+  #pragma omp parallel
+	#pragma omp single
+  {
+    
+    #pragma omp task depend(out:u, v, A)
+    {
+        init_datastructures(u, v, A, N);
+    }
+
+    #pragma omp task depend(in:u, v) depend(out:s)
+    {
+        function_d(s, u, v, N);
+        // Task B
+        // This task depends on the completion of Task A and produces data stored in 'b'
+    }
+
+    #pragma omp task depend(in:u, v) depend(out:x)
+    {
+      function_b(x, 2, u, v, N);
+        // Task B
+        // This task depends on the completion of Task A and produces data stored in 'b'
+    }
+
+    #pragma omp task depend(in:A, x) depend(out:y)
+    {
+      function_a(y, A, x, N);
+        // Task B
+        // This task depends on the completion of Task A and produces data stored in 'b'
+    }
+
+    #pragma omp task depend(in:s, x, y) depend(out:z)
+    {
+      function_c(z, s, x, y, N);
+        // Task B
+        // This task depends on the completion of Task A and produces data stored in 'b'
+    }
+
+    #pragma omp task depend(in: s, x, y, z, A) 
+    {
+      print_results_to_file(s, x, y, z, A, N, File);
+    }
+
+  }
+  
+
+
+  
+  
 
   std::cout << "For correctness checking, partial results have been written to "
                "partial_results.out"
