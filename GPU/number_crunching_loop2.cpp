@@ -19,6 +19,8 @@ void function_a(double *y, const double *A, const double *x, const int N) {
     for (unsigned int j = 0; j < N; j++) {
       y[i] += A[i * N + j] * x[i];
     }
+    std::cout << i
+            << std::endl;
   }
   std::cout << "A FINISHED "
             << std::endl;
