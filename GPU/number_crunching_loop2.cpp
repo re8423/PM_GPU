@@ -17,6 +17,8 @@ void function_a(double *y, const double *A, const double *x, const int N) {
       y[i] += A[i * N + j] * x[i];
     }
   }
+  std::cout << "A FINISHED "
+            << std::endl;
 }
 
 void function_b(double *x, const double a, const double *u, const double *v, const int N) {
@@ -26,6 +28,8 @@ void function_b(double *x, const double a, const double *u, const double *v, con
   for (unsigned int i = 0; i < N; i++) {
     x[i] = a * u[i] + v[i];
   }
+  std::cout << "B FINISHED "
+            << std::endl;
 }
 
 void function_c(double *z, const double s, const double *x, const double *y,
@@ -39,6 +43,8 @@ void function_c(double *z, const double s, const double *x, const double *y,
       z[i] = x[i] + y[i];
     }
   }
+  std::cout << "C FINISHED "
+            << std::endl;
 }
 
 void function_d(double s, const double *u, const double *v, const int N) {
@@ -47,6 +53,8 @@ void function_d(double s, const double *u, const double *v, const int N) {
   for (unsigned int i = 0; i < N; i++) {
     s += u[i] * v[i];
   }
+  std::cout << "D FINISHED "
+            << std::endl;
 }
 
 void init_datastructures(double *u, double *v, double *A, const int N) {
@@ -58,6 +66,8 @@ void init_datastructures(double *u, double *v, double *A, const int N) {
   for (unsigned int i = 0; i < N * N; i++) {
     A[i] = static_cast<double>(i%8);
   }
+  std::cout << "INIT FINISHED "
+            << std::endl;
 }
 
 void print_results_to_file(const double s, const double *x, const double *y,
