@@ -5,43 +5,40 @@
 #include <omp.h> //openmp header file
 
 
-double *function_a(double *y, const double *A, const double *x, const int N) {
+void *function_a(double *y, const double *A, const double *x, const int N) {
   
   #pragma omp target teams distribute parallel for
   for (unsigned int i = 0; i < N; i++) {
-    *y[i] = 0;
+    y[i] = 0;
   }
   #pragma omp target teams distribute parallel for reduction(+:y[0:N]) map(to:A[0:N*N], x[0:N]) map(tofrom:y[0:N]) 
   for (unsigned int i = 0; i < N; i++) {
     for (unsigned int j = 0; j < N; j++) {
-      *y[i] += A[i * N + j] * x[i];
+      y[i] += A[i * N + j] * x[i];
     }
   }
-  return *y;
 }
 
-double *function_b(double *x, const double a, const double *u, const double *v, const int N) {
+void *function_b(double *x, const double a, const double *u, const double *v, const int N) {
   
   // instead of tofrom, shouldnt from be better?
   #pragma omp target teams distribute parallel for map(to:a, u[0:N], v[0:N]) map(tofrom:x[0:N])
   for (unsigned int i = 0; i < N; i++) {
-    *x[i] = a * u[i] + v[i];
+    x[i] = a * u[i] + v[i];
   }
-  return *x;
 }
 
-double *function_c(double *z, const double s, const double *x, const double *y,
+void *function_c(double *z, const double s, const double *x, const double *y,
                    const int N) {
   
   #pragma omp target teams distribute parallel for map(to:s, x[0:N], y[0:N]) map(tofrom:z[0:N]) 
   for (unsigned int i = 0; i < N; i++) {
     if (i % 2 == 0) {
-      *z[i] = s * x[i] + y[i];
+      z[i] = s * x[i] + y[i];
     } else {
-      *z[i] = x[i] + y[i];
+      z[i] = x[i] + y[i];
     }
   }
-  return *z;
 }
 
 double function_d(double s, const double *u, const double *v, const int N) {
@@ -134,13 +131,13 @@ int main(int argc, char **argv) {
   {s = function_d(s, u, v, N);}
 
   #pragma omp task depend(in: u, v)
-  {*x = function_b(x, 2, u, v, N);}
+  {function_b(x, 2, u, v, N);}
 
   #pragma omp task depend(out: y)
-  {*y = function_a(y, A, x, N);}
+  {function_a(y, A, x, N);}
 
   #pragma omp task depend(out: z)
-  {*z = function_c(z, s, x, y, N);}
+  {function_c(z, s, x, y, N);}
   }
 
   
