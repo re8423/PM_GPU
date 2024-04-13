@@ -119,7 +119,8 @@ int main(int argc, char **argv) {
   double *A = new double[N * N];
 
   init_datastructures(u, v, A, N);
-
+  double s;
+  double *x;
   #pragma omp parallel
   #pragma omp single
   {
@@ -129,10 +130,10 @@ int main(int argc, char **argv) {
 		}
 		#pragma omp task depend(in: u, v) //b
 		{ 
-			double *x = function_b(2, u, v, N);
+			double x = function_b(2, u, v, N);
 		}
   }
-
+  #pragma omp taskwait 
 // d and b can be ran concurrently
 
   double *y = function_a(A, x, N);
