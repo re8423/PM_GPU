@@ -44,7 +44,7 @@ double *function_c(double *z, const double s, const double *x, const double *y,
   return z;
 }
 
-double function_d(double s, const double *u, const double *v, const int N) {
+double function_d(double *s, const double *u, const double *v, const int N) {
   
   #pragma omp target teams distribute parallel for reduction(+:s) map(to:u[0:N], v[0:N]) map(tofrom: s)
   for (unsigned int i = 0; i < N; i++) {
