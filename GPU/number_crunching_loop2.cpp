@@ -7,11 +7,11 @@
 
 double *function_a(const double *A, const double *x, const int N) {
   double *y = new double[N];
-  #pragma omp target teams distribute parallel for
+  #pragma omp target teams distribute
   for (unsigned int i = 0; i < N; i++) {
     y[i] = 0;
   }
-  #pragma omp target teams distribute parallel for reduction(+:y[0:N]) map(to:A[0:N*N], x[0:N]) map(tofrom:y[0:N]) 
+  #pragma omp target teams distribute reduction(+:y[0:N]) map(to:A[0:N*N], x[0:N]) map(tofrom:y[0:N]) 
   for (unsigned int i = 0; i < N; i++) {
     for (unsigned int j = 0; j < N; j++) {
       y[i] += A[i * N + j] * x[i];
@@ -23,7 +23,7 @@ double *function_a(const double *A, const double *x, const int N) {
 double *function_b(const double a, const double *u, const double *v, const int N) {
   double *x = new double[N];
   // instead of tofrom, shouldnt from be better?
-  #pragma omp target teams distribute parallel for map(to:a, u[0:N], v[0:N]) map(tofrom:x[0:N])
+  #pragma omp target teams distribute map(to:a, u[0:N], v[0:N]) map(tofrom:x[0:N])
   for (unsigned int i = 0; i < N; i++) {
     x[i] = a * u[i] + v[i];
   }
@@ -33,7 +33,7 @@ double *function_b(const double a, const double *u, const double *v, const int N
 double *function_c(const double s, const double *x, const double *y,
                    const int N) {
   double *z = new double[N];
-  #pragma omp target teams distribute parallel for map(to:s, x[0:N], y[0:N]) map(tofrom:z[0:N]) 
+  #pragma omp target teams distribute map(to:s, x[0:N], y[0:N]) map(tofrom:z[0:N]) 
   for (unsigned int i = 0; i < N; i++) {
     if (i % 2 == 0) {
       z[i] = s * x[i] + y[i];
@@ -46,7 +46,7 @@ double *function_c(const double s, const double *x, const double *y,
 
 double function_d(const double *u, const double *v, const int N) {
   double s = 0;
-  #pragma omp target teams distribute parallel for reduction(+:s) map(to:u[0:N], v[0:N]) map(tofrom: s)
+  #pragma omp target teams distribute reduction(+:s) map(to:u[0:N], v[0:N]) map(tofrom: s)
   for (unsigned int i = 0; i < N; i++) {
     s += u[i] * v[i];
   }
@@ -120,40 +120,37 @@ int main(int argc, char **argv) {
 
   init_datastructures(u, v, A, N);
 
-  double s;
-  double *x;
-
-  // Create tasks for function_d and function_b
   #pragma omp parallel
   #pragma omp single
   {
-    #pragma omp task
-    s = function_d(u, v, N);
-
-    #pragma omp task
-    x = function_b(2, u, v, N);
-
-    // Specify dependencies between tasks
-    #pragma omp taskwait depend(out:s) depend(in:x)
-
-    double *y = function_a(A, x, N);
-    double *z = function_c(s, x, y, N);
-
-    std::ofstream File("partial_results.out");
-    print_results_to_file(s, x, y, z, A, N, File);
-
-    std::cout << "For correctness checking, partial results have been written to "
-                 "partial_results.out"
-              << std::endl;
-
-    delete[] x;
-    delete[] y;
-    delete[] z;
+    #pragma omp task depend(in: u, v) //d
+		{ 
+			double s = function_d(u, v, N);
+		}
+		#pragma omp task depend(in: u, v) //b
+		{ 
+			double *x = function_b(2, u, v, N);
+		}
   }
+
+// d and b can be ran concurrently
+
+  double *y = function_a(A, x, N);
+  double *z = function_c(s, x, y, N);
+
+  std::ofstream File("partial_results.out");
+  print_results_to_file(s, x, y, z, A, N, File);
+
+  std::cout << "For correctness checking, partial results have been written to "
+               "partial_results.out"
+            << std::endl;
 
   delete[] u;
   delete[] v;
   delete[] A;
+  delete[] x;
+  delete[] y;
+  delete[] z;
 
-  return EXIT_SUCCESS;
+  EXIT_SUCCESS;
 }
