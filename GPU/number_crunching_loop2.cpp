@@ -118,14 +118,34 @@ int main(int argc, char **argv) {
   double *v = new double[N];
   double *A = new double[N * N];
 
-  init_datastructures(u, v, A, N);
+  
 
 // d and b can be ran concurrently
-  double s = function_d(u, v, N);
-  double *x = function_b(2, u, v, N);
 
-  double *y = function_a(A, x, N);
-  double *z = function_c(s, x, y, N);
+  #pragma omp parallel
+  #pragma omp single
+  {
+  #pragma omp task depend(out: u, v, A)
+  {init_datastructures(u, v, A, N);}
+
+  #pragma omp task depend(in: u, v)
+  {double s = function_d(u, v, N);}
+
+  #pragma omp task depend(in: u, v)
+  {double *x = function_b(2, u, v, N);}
+
+  #pragma omp task depend(out: y)
+  {double *y = function_a(A, x, N);}
+
+  #pragma omp task depend(out: z)
+  {double *z = function_c(s, x, y, N);}
+  }
+
+  
+  
+
+  
+  
 
   std::ofstream File("partial_results.out");
   print_results_to_file(s, x, y, z, A, N, File);
