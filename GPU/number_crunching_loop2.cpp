@@ -6,22 +6,17 @@
 
 
 void function_a(double *y, const double *A, const double *x, const int N) {
-  std::cout << "A STARTED "
-            << std::endl;
   #pragma omp target teams distribute parallel for
   for (unsigned int i = 0; i < N; i++) {
     y[i] = 0;
   }
-  std::cout << "FIRST LOOP FINISHED "
-            << std::endl;
+
   #pragma omp target teams distribute parallel for reduction(+:y[0:N]) map(to:A[0:N*N], x[0:N]) map(tofrom:y[0:N]) 
   for (unsigned int i = 0; i < N; i++) {
     for (unsigned int j = 0; j < N; j++) {
       y[i] += A[i * N + j] * x[i];
     }
   }
-  std::cout << "A FINISHED "
-            << std::endl;
 }
 
 void function_b(double *x, const double a, const double *u, const double *v, const int N) {
@@ -31,8 +26,7 @@ void function_b(double *x, const double a, const double *u, const double *v, con
   for (unsigned int i = 0; i < N; i++) {
     x[i] = a * u[i] + v[i];
   }
-  std::cout << "B FINISHED "
-            << std::endl;
+
 }
 
 void function_c(double *z, const double s, const double *x, const double *y,
@@ -46,8 +40,6 @@ void function_c(double *z, const double s, const double *x, const double *y,
       z[i] = x[i] + y[i];
     }
   }
-  std::cout << "C FINISHED "
-            << std::endl;
 }
 
 double function_d(double s, const double *u, const double *v, const int N) {
@@ -56,8 +48,6 @@ double function_d(double s, const double *u, const double *v, const int N) {
   for (unsigned int i = 0; i < N; i++) {
     s += u[i] * v[i];
   }
-  std::cout << "D FINISHED "
-            << std::endl;
   return s;
 }
 
@@ -70,8 +60,6 @@ void init_datastructures(double *u, double *v, double *A, const int N) {
   for (unsigned int i = 0; i < N * N; i++) {
     A[i] = static_cast<double>(i%8);
   }
-  std::cout << "INIT FINISHED "
-            << std::endl;
 }
 
 void print_results_to_file(const double s, const double *x, const double *y,
