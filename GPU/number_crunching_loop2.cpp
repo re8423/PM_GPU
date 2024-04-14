@@ -6,7 +6,7 @@
 
 
 void function_a(double *y, const double *A, const double *x, const int N) {
-  #pragma omp target teams distribute parallel for map(tofrom:y[0:N]) 
+  #pragma omp target teams distribute parallel for
   for (unsigned int i = 0; i < N; i++) {
     y[i] = 0;
   }
@@ -149,7 +149,6 @@ int main(int argc, char **argv) {
         // This task depends on the completion of Task A and produces data stored in 'b'
     }
   }
-  #pragma omp target map(delete:u[0:N], v[0:N], x[0:N])
 
   function_a(y, A, x, N);
   function_c(z, s, x, y, N);
