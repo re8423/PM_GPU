@@ -2,6 +2,7 @@
 #SBATCH -p tpg-gpu-small
 #SBATCH -N 1
 #SBATCH -c 1
+#SBATCH --gres=gpu
 #SBATCH --time=00:15:00
 source /etc/profile
 
@@ -24,4 +25,4 @@ nvc++ -fopenmp -mp=gpu -o loopgpu number_crunching_loop.cpp
 
 # OMP_NUM_THREADS=50 time ./loopgpu 20000
 
-OMP_NUM_THREADS=10 time ./loopgpu 10000
+OMP_NUM_THREADS=1 time ./loopgpu 10000
