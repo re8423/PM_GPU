@@ -156,5 +156,5 @@ int main(int argc, char **argv) {
   delete[] y;
   delete[] z;
 
-  EXIT_SUCCESS;
+  // EXIT_SUCCESS;
 }

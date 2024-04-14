@@ -7,23 +7,23 @@
 source /etc/profile
 
 module load nvidia-hpc
-nvc++ -fopenmp -mp=gpu -o loopgpu number_crunching_loop.cpp
-# OMP_NUM_THREADS=50 time ./loopgpu 100000
+nvc++ -fopenmp -mp=gpu -o loopgpu2 number_crunching_loop.cpp
+# OMP_NUM_THREADS=50 time ./loopgpu2 100000
 
-# OMP_NUM_THREADS=50 time ./loopgpu 90000
+# OMP_NUM_THREADS=50 time ./loopgpu2 90000
 
-# OMP_NUM_THREADS=50 time ./loopgpu 80000
+# OMP_NUM_THREADS=50 time ./loopgpu2 80000
 
-# OMP_NUM_THREADS=50 time ./loopgpu 70000
+# OMP_NUM_THREADS=50 time ./loopgpu2 70000
 
-# OMP_NUM_THREADS=50 time ./loopgpu 60000
+# OMP_NUM_THREADS=50 time ./loopgpu2 60000
 
-# OMP_NUM_THREADS=50 time ./loopgpu 50000
+# OMP_NUM_THREADS=50 time ./loopgpu2 50000
 
-# OMP_NUM_THREADS=50 time ./loopgpu 40000
+# OMP_NUM_THREADS=50 time ./loopgpu2 40000
 
-# OMP_NUM_THREADS=50 time ./loopgpu 30000
+# OMP_NUM_THREADS=50 time ./loopgpu2 30000
 
-# OMP_NUM_THREADS=50 time ./loopgpu 20000
+# OMP_NUM_THREADS=50 time ./loopgpu2 20000
 
-OMP_NUM_THREADS=1 time ./loopgpu 10000
+OMP_NUM_THREADS=1 time ./loopgpu2 10000
