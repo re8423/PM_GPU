@@ -3,7 +3,7 @@
 #SBATCH -N 1
 #SBATCH -c 4
 #SBATCH --time=00:15:00
-#SBATCH --gres=gpu:turing:3
+#SBATCH --gres=gpu:1g.10gb:1
 #SBATCH --mem=10G	# memory required, up to 250G on standard nodes
 source /etc/profile
 
