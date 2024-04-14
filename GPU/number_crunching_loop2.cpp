@@ -6,7 +6,7 @@
 
 
 void function_a(double *y, const double *A, const double *x, const int N) {
-  #pragma omp target teams distribute parallel for
+  #pragma omp target teams distribute parallel for map(tofrom:y[0:N]) 
   for (unsigned int i = 0; i < N; i++) {
     y[i] = 0;
   }
