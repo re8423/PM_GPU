@@ -17,6 +17,8 @@ void function_a(double *y, const double *A, const double *x, const int N) {
       y[i] += A[i * N + j] * x[i];
     }
   }
+  std::cout << "A FINISHED"
+        << std::endl;
 }
 
 void function_b(double *x, const double a, const double *u, const double *v, const int N) {
@@ -25,7 +27,8 @@ void function_b(double *x, const double a, const double *u, const double *v, con
   for (unsigned int i = 0; i < N; i++) {
     x[i] = a * u[i] + v[i];
   }
-
+  std::cout << "B FINISHED"
+          << std::endl;
 }
 
 void function_c(double *z, const double s, const double *x, const double *y, const int N) {
@@ -37,6 +40,8 @@ void function_c(double *z, const double s, const double *x, const double *y, con
       z[i] = x[i] + y[i];
     }
   }
+  std::cout << "C FINISHED"
+        << std::endl;
 }
 
 double function_d(double s, const double *u, const double *v, const int N) {
@@ -45,6 +50,8 @@ double function_d(double s, const double *u, const double *v, const int N) {
   for (unsigned int i = 0; i < N; i++) {
     s += u[i] * v[i];
   }
+  std::cout << "D FINISHED"
+        << std::endl;
   return s;
 }
 
@@ -119,7 +126,8 @@ int main(int argc, char **argv) {
   double *z = new double[N];
 
   init_datastructures(u, v, A, N);
-
+  std::cout << "INIT FINISHED"
+              << std::endl;
 // d and b can be ran concurrently
   #pragma omp parallel
 	#pragma omp single
