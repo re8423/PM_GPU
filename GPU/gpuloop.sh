@@ -1,9 +1,9 @@
 #!/bin/bash
 #SBATCH -p tpg-gpu-small
-#SBATCH -N 10
-#SBATCH -c 10
-#SBATCH --gres=gpu
+#SBATCH -N 1
+#SBATCH -c 4
 #SBATCH --time=00:15:00
+#SBATCH --gres=gpu:turing:1
 source /etc/profile
 
 module load nvidia-hpc
