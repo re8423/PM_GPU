@@ -6,6 +6,7 @@
 #SBATCH --time=00:15:00
 source /etc/profile
 
+module load nvidia-hpc
 nvc++ -fopenmp -mp=gpu -o loopgpu number_crunching_loop.cpp
 # OMP_NUM_THREADS=50 time ./loopgpu 100000
 
