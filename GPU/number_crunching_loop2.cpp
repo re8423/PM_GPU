@@ -13,7 +13,7 @@ void function_a(double *y, const double *A, const double *x, const int N) {
   std::cout << "FIRST A FINISHED"
         << std::endl;
 
-  #pragma omp target teams distribute parallel for reduction(+:y[0:N]) map(to:A[0:N*N], x[0:N]) map(tofrom:y[0:N]) 
+  #pragma omp target teams distribute parallel for reduction(+:y[0:N]) map(to:A[0:N], x[0:N]) map(tofrom:y[0:N]) 
   for (unsigned int i = 0; i < N; i++) {
     // #pragma omp target teams distribute parallel for reduction(+:y[i:i+1]) map(to:A[i*N:i*N+N], x[i:i+1]) map(tofrom:y[i:i+1])
     for (unsigned int j = 0; j < N; j++) {
@@ -69,7 +69,7 @@ void init_datastructures(double *u, double *v, double *A, const int N) {
     v[i] = static_cast<double>(i%4);
   }
 
-  for (unsigned int i = 0; i < N * N; i++) {
+  for (unsigned int i = 0; i < N; i++) {
     A[i] = static_cast<double>(i%8);
   }
 }
