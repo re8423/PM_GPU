@@ -129,8 +129,8 @@ int main(int argc, char **argv) {
   double *z = new double[N];
 
   init_datastructures(u, v, A, N);
-  std::cout << "INIT FINISHED"
-              << std::endl;
+  // std::cout << "INIT FINISHED"
+  //             << std::endl;
 // d and b can be ran concurrently
   #pragma omp parallel
 	#pragma omp single
