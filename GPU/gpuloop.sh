@@ -1,6 +1,6 @@
 #!/bin/bash
 #SBATCH -p tpg-gpu-small
-#SBATCH --mem-per-cpu=20G
+#SBATCH --mem-per-cpu=2G
 #SBATCH -N 1		# number of compute nodes. 
 #SBATCH -c 10		# number of CPU cores, one per thread, up to 128
 #SBATCH --ntasks-per-node=1
