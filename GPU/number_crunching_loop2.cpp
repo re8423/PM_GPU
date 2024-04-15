@@ -153,7 +153,7 @@ int main(int argc, char **argv) {
   function_a(y, A, x, N);
   function_c(z, s, x, y, N);
   
-  std::ofstream File("partial_results.out");3
+  std::ofstream File("partial_results.out");
   print_results_to_file(s, x, y, z, A, N, File);
 
   // std::cout << "For correctness checking, partial results have been written to "
