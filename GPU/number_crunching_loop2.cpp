@@ -13,7 +13,7 @@ void function_a(double *y, const double *A, const double *x, const int N) {
   // std::cout << "FIRST A FINISHED"
   //       << std::endl;
 
-  #pragma omp target teams distribute parallel for reduction(+:y[0:N]) map(to:A[0:N], x[0:N]) map(tofrom:y[0:N]) 
+  #pragma omp target teams distribute parallel for reduction(+:y[0:N]) map(to:A[0:8], x[0:N]) map(tofrom:y[0:N]) 
   for (unsigned int i = 0; i < N; i++) {
     for (unsigned int j = 0; j < N; j++) {
       y[i] += A[(i * N + j)%8] * x[i];
@@ -153,7 +153,7 @@ int main(int argc, char **argv) {
   function_a(y, A, x, N);
   function_c(z, s, x, y, N);
   
-  std::ofstream File("partial_results.out");
+  std::ofstream File("partial_results.out");3
   print_results_to_file(s, x, y, z, A, N, File);
 
   // std::cout << "For correctness checking, partial results have been written to "

@@ -11,10 +11,10 @@ double *function_a(const double *A, const double *x, const int N) {
   for (unsigned int i = 0; i < N; i++) {
     y[i] = 0;
   }
-  #pragma omp target teams distribute parallel for reduction(+:y[0:N]) map(to:A[0:N*N], x[0:N]) map(tofrom:y[0:N]) 
+  #pragma omp target teams distribute parallel for reduction(+:y[0:N]) map(to:A[0:8], x[0:N]) map(tofrom:y[0:N]) 
   for (unsigned int i = 0; i < N; i++) {
     for (unsigned int j = 0; j < N; j++) {
-      y[i] += A[i * N + j] * x[i];
+      y[i] += A[(i * N + j)%8] * x[i];
     }
   }
   return y;
@@ -59,7 +59,7 @@ void init_datastructures(double *u, double *v, double *A, const int N) {
     v[i] = static_cast<double>(i%4);
   }
 
-  for (unsigned int i = 0; i < N * N; i++) {
+  for (unsigned int i = 0; i < 8; i++) {
     A[i] = static_cast<double>(i%8);
   }
 }

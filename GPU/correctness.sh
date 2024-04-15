@@ -12,7 +12,7 @@ OMP_NUM_TEAMS=10 OMP_NUM_THREADS=10 ./loopgpu2 123456
 ./serial 123456
 diff serial_results.out partial_results.out
 
-OMP_NUM_TEAMS=10 OMP_NUM_THREADS=10 ./loopgpu2 78345
+OMP_NUM_TEAMS=10 OMP_NUM_THREADS=10 ./loopgpu2 78345 
 ./serial 78345
 diff serial_results.out partial_results.out
 
