@@ -9,6 +9,8 @@ source /etc/profile
 module load nvidia-hpc
 nvc++ -fopenmp -mp=gpu -o loopgpu2 number_crunching_loop2.cpp
 OMP_NUM_TEAMS=10 OMP_NUM_THREADS=10 time ./loopgpu2 1000
+OMP_NUM_TEAMS=10 OMP_NUM_THREADS=10 time ./loopgpu2 2000
+OMP_NUM_TEAMS=10 OMP_NUM_THREADS=10 time ./loopgpu2 3000
 OMP_NUM_TEAMS=10 OMP_NUM_THREADS=10 time ./loopgpu2 4000
 OMP_NUM_TEAMS=10 OMP_NUM_THREADS=10 time ./loopgpu2 5000
 OMP_NUM_TEAMS=10 OMP_NUM_THREADS=10 time ./loopgpu2 6000
