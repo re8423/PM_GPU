@@ -7,14 +7,6 @@
 #SBATCH --time=00:15:00
 
 time ./number_crunching 1000
-time ./number_crunching 2000
-time ./number_crunching 3000
-time ./number_crunching 4000
-time ./number_crunching 5000
-time ./number_crunching 6000
-time ./number_crunching 7000
-time ./number_crunching 8000
-time ./number_crunching 9000
 # gprof -zb number_crunching gmon.out
 
 # ./number_crunching 20000
