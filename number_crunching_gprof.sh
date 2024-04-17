@@ -6,7 +6,7 @@
 #SBATCH -c 1
 #SBATCH --time=00:15:00
 
-./number_crunching 123456
+./number_crunching 5000
 gprof -zb number_crunching gmon.out
 
 # ./number_crunching 20000
