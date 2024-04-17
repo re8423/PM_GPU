@@ -110,7 +110,7 @@ int main(int argc, char **argv) {
 
   double *u = new double[N];
   double *v = new double[N];
-  double *A = new double[N * N];
+  double *A = new double[8];
 
   init_datastructures(u, v, A, N);
 

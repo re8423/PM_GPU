@@ -10,5 +10,5 @@ module load gcc/12.2 likwid/5.2.0
 
 g++ -mfma -O1 -DLIKWID_PERFMON -fno-inline -march=native -o num_crunch_likwid number_crunching_likwid.cpp -llikwid
 
-likwid-perfctr -m -g "MEM_DP" -C 0 ./num_crunch_likwid 10000
-likwid-perfctr -m -g "FLOPS_DP" -C 0 ./num_crunch_likwid 10000
+likwid-perfctr -m -g "MEM_DP" -C 0 ./num_crunch_likwid 1000
+# likwid-perfctr -m -g "FLOPS_DP" -C 0 ./num_crunch_likwid 10000
